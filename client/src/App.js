@@ -12,8 +12,8 @@ function App() {
   return (
 <BrowserRouter>
     <Route exact path="/" component={NavBar}></Route>
-    <Route path="/recipes" component={Home}></Route>
-    <Route path="/recipes:id" component={RecipeDetails}></Route>
+    <Route exact path ="/recipes" component={Home}></Route>
+    <Route exact path ="/recipes/:id" component={RecipeDetails}></Route>
 </BrowserRouter>
    
     

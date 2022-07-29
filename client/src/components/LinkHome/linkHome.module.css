@@ -1,0 +1,45 @@
+.conteinerGral{
+    display: flex;
+    justify-content: end;        
+    max-width: 100%;
+    /* border: solid 2px black; */
+    align-items: center;
+
+
+}
+
+
+
+.conteinerLink{
+    max-width: 8%;    
+    align-content: flex-end;  
+    justify-items: end;
+    display: flex;
+    flex-direction: column-reverse;   
+    position: fixed;
+    /* margin-top: 540px;
+    margin-right: 200px; */
+    /* border: solid 2px black; */
+}
+
+
+
+
+.home{
+       width: 4rem;
+    margin: auto;
+    /* border: solid 2px black; */
+    
+}
+.home{
+    filter: opacity(0.5) drop-shadow(0 0 0 rgb(14, 104, 4)); 
+    }
+
+
+.linkTxt{   
+  text-align: center;
+  /* border: solid 2px black; */
+
+}
+
+

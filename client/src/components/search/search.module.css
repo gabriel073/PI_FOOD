@@ -1,0 +1,11 @@
+.containerSearch {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin-left: 130px;
+    /* border: solid 2px black; */
+  }
+  .search{
+    padding: 7px;
+    border: solid 1px black;
+  }

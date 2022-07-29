@@ -1,0 +1,75 @@
+html {
+  height: auto;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  background: rgb(20,241,2);
+  background: linear-gradient(198deg, rgba(20,241,2,1) 2%, rgba(84,233,33,0.8855917366946778) 35%, rgba(186,242,194,0.938813025210084) 87%);
+}
+.containerPrincipal {
+  /* flex-wrap: wrap; */
+  /* border: solid 2px black; */
+    width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.title {
+  justify-content: center;
+  /* border: solid 2px black; */
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Mochiy Pop One", "sans-serif ";
+
+  height: 100%;
+}
+.containerCard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  justify-content: center;
+  align-content: end;
+  margin-top: 130px;
+  margin: auto;
+  width: 50rem;
+  padding: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.104);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: all 400ms ease-out;
+  cursor: default;
+  border: solid 2px black;
+  text-align: left;
+}
+
+.foodTitle {
+  font-size: 2rem;
+  margin-bottom: 6px;
+text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+.foodTitle,
+.dietsText,
+.summaryText,
+.heatlhScoreText,
+.stepsText {
+  font-weight: 700;
+}

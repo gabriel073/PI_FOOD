@@ -1,0 +1,99 @@
+html{
+  height:100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+*{
+  /* border: solid 2px black; */
+ }
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+  background: rgb(20,241,2);
+background: linear-gradient(198deg, rgba(20,241,2,1) 2%, rgba(84,233,33,0.8855917366946778) 35%, rgba(186,242,194,0.938813025210084) 87%);
+}
+.containerPrincipal {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* border: solid 2px black; */
+}
+.navBar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  height: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  /* border: solid 2px black; */
+}
+
+.buttonSearch {
+  background-color: linear-gradient(
+    39deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(66, 244, 6, 1) 27%,
+    rgba(227, 234, 236, 0.8603816526610644) 100%
+  );
+  border: solid 2px black;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+.containerCards {
+  width: 100%;
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.title {
+  font-size: 4rem;
+  margin-top: 50px;
+  font-family: "Mochiy Pop One", "sans-serif ";
+}
+.foodTitle {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.foodText {
+  font-size: 1.5rem;
+}
+
+.card {
+  justify-content: center;
+  margin: 4rem;
+  width: 30rem;
+  padding: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.104);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  transition: all 400ms ease-out;
+  cursor: default;
+}
+
+.containerPaginacion {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 20rem;
+  height: 3rem;
+}
+
+.btnAtras,
+.btnAdelante {
+  width: 20rem;
+  margin: 3px;
+  cursor: pointer;
+  border: solid 2px black;
+  background: rgba(255, 255, 255, 0.104);
+}

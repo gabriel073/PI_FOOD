@@ -1,46 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import styles from "./RecipeDetail.module.css";
+import stylesSpinner from "../../components/spinner.module.css";
+import { getRecipeDetails, emptyRecipeDetail } from '../../actions';
+import LinkHome from '../LinkHome/LinkHome.js';
 
-import { getRecipeDetails } from '../../actions';
 
-
-
-export default function RecipeDetails() {
+export default function RecipeDetails(props) {
 
     const dispatch = useDispatch();
-    const { id } = useParams();
+    const id = props.match.params.id;
 
     useEffect(() => {
+        dispatch(emptyRecipeDetail())
         dispatch(getRecipeDetails(id))
-    }, [useDispatch])
+    }, [dispatch, id])
 
 
     const { details } = useSelector((state) => state)
 
-
-
-// console.log(details)
-
-
     return (
-        <div className="container_principal">
-            <h1>Detalles de la receta</h1>
+        <div className={styles.containerPrincipal}>
+            <h1 className={styles.title}>Recipe Detail</h1>
 
-                {console.log(details)}
-            <div className="container_cards">
+            <div>{LinkHome()}</div>
+
+           
+            <div className={styles.containerCard}>
                 {
-                    details ?                   
-                        <div key={details.id}>
-                                <h2>{details.title}</h2>
-                              <img src={details.img} alt="photo_racipe"/>
-                                {/* <p>Diets: {details.diets}</p>
-                                <p>Summary:{details.summary}</p>
-                                <p>Health Score:{details.healthScore}</p>  */}
-                                {/* <p>Steps:{d.analyzedInstructions.steps}</p>   //----> Array */}
-                            </div>
-                    
-                        : "Cargando.... Aqui Va el spinner"
+                    details.id ?
+                        <div key={details.id} className={styles.card}>
+
+                            <h2 className={styles.foodTitle}>{details.name}</h2>
+                            <img src={details.img} alt="photo_racipe" />
+                            <p><span className={styles.dietsText}>Diets:</span> {details.diets}</p>
+                            <p className={styles.summaryText}>Summary: </p><p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+                            <p><span className={styles.heatlhScoreText}>Health Score: </span>{details.healthScore}</p>
+                            <p><span className={styles.stepsText}>steps: </span>{details.steps}</p>
+
+                        </div>
+                        : <div className={stylesSpinner.containerSpinner}><div className={stylesSpinner.pacMan}></div><div className={stylesSpinner.loading}>Loading...</div> </div>
                 }
             </div>
         </div>
