@@ -1,0 +1,30 @@
+.navBar {
+ display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+       height: 5rem;
+      width: 100%;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  background-color: darkgreen;
+ border: solid 2px black;  
+  position: fixed;
+ 
+    /* grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; */
+    }
+
+.linkHome {
+  align-self: center;
+  justify-content: end;
+  width: 10%;
+  border: solid 2px black;
+}
+.newRecipe {
+  width: 15%;
+  align-self: center;
+  justify-self: center;
+  border: solid 2px black;
+}

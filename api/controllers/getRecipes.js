@@ -10,7 +10,7 @@ exports.getRecipes = async (req, res) => {
         const allRecipes = data.results.map((recipe) => {
             return {
                 id: recipe.id,
-                title: recipe.title,
+                name: recipe.title,
                 img: recipe.image,
                 healthScore: recipe.healthScore,
                 diets: recipe.diets

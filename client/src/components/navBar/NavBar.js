@@ -6,7 +6,6 @@ import frutasHome from "../../imgs/frutasHome.mp4";
 
 function NavBar() {
     return (
-
         <div className={styles.pagInicial}>
             <div className={styles.overlay}>
             <div className={styles.absolute}>          
@@ -17,8 +16,6 @@ function NavBar() {
                 </video>
                 </div>
         </div>
-
     )
 }
-
 export default NavBar;

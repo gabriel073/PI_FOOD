@@ -1,16 +1,3 @@
-body {
-  background: #2e3e2ebd; 
-
-  height: auto;
-}
-html {
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: auto;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 .pacMan {
   border-radius: 50%;
   margin: 0 auto;

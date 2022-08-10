@@ -4,27 +4,24 @@ import { Link } from "react-router-dom";
 import { getRecipes } from "../../actions";
 import styles from "./Home.module.css";
 import stylesSpinner from "../../components/spinner.module.css";
-import LinkHome from "../LinkHome/LinkHome";
-import Search from "../search/Search";
-import Filtros from "../filtros/Filtros";
-
+import MenuPrincipal from "../menuPrincipal/MenuPrincipal";
 
 
 
 export default function Home() {
     const dispatch = useDispatch();
-    const { filteredRecipes } = useSelector(state => state);
+    const { filteredRecipes, recipes } = useSelector(state => state);
     const [pagina, setPagina] = useState(0);
 
-
-
+    // es el equivalente a los desmonta y monta componentes
     useEffect(() => {
-        dispatch(getRecipes())  
-    }, [dispatch])
+        if (recipes.length === 0) {
+            dispatch(getRecipes())
+        }
+    }, [dispatch, recipes.length])
 
-
-    const handleAddPagina = () => {
-        setPagina(pagina + 1);
+    const handleAddPagina = (value) => {
+        setPagina(value);
         window.scrollTo(0, 0);
     }
 
@@ -36,25 +33,35 @@ export default function Home() {
     const itemsPorPagina = 9;
     const offset = pagina * itemsPorPagina;
     const limit = offset + itemsPorPagina;
-    const currentRecipes = filteredRecipes.slice(offset, limit);
-
-      
-    return (
-        <>
-        <div className={styles.navBar}>
-            <Search />
-            <Filtros />
-        </div>
-     
-            <div className={styles.containerPrincipal}>
-                          <h1 className={styles.title}>Recipes</h1>
-          <LinkHome/>
+    if (typeof filteredRecipes === "string") {
+        return (
+            <div>
+                <MenuPrincipal />
+                <div className={styles.containerErrorNoFound}>
+                    <p className={styles.errorNoFound}> "No se encuentra la receta"</p>
+                </div>
+            </div>
+        )
+    } else {
+        const totalItems = filteredRecipes.length;
+        const cantPaginas = Math.ceil(totalItems / itemsPorPagina) - 1;
+        const pageNumbers = [];
+        const currentRecipes = filteredRecipes.slice(offset, limit);
+        for (let i = 0; i <= cantPaginas; i++) {
+            pageNumbers.push(i);
+        }
+        return (
+            <>
+                <MenuPrincipal />
+                <div className={styles.containerTitle}>
+                    <h1 className={styles.title}>Recipes</h1>
+                </div>
                 <div className={styles.containerCards}>
                     {currentRecipes.length > 0 ?
                         currentRecipes.map((r) => (
                             <div key={r.id} className={styles.card}>
                                 <Link to={`/recipes/${r.id}`}>
-                                    <h2 className={styles.foodTitle}>{r.title}</h2>
+                                    <h2 className={styles.foodTitle}>{r.name}</h2>
                                     <img src={r.img} alt="photo_racipe" />
                                     <p className={styles.foodText}>Diets: {r.diets}</p>
                                 </Link>
@@ -63,17 +70,25 @@ export default function Home() {
                         )
                         : <div className={stylesSpinner.containerSpinner}><div className={stylesSpinner.pacMan}></div><div className={stylesSpinner.loading}>Loading...</div> </div>}
                 </div>
-            </div>     
-    
-        <div className={styles.containerPaginacion}>
-                
+                <div className={styles.containerPaginacion}>
                     {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
-                        
-                    <button className={styles.btnAdelante} onClick={handleAddPagina}> Adelante </button>
-            
-            </div>
-        </>
-    )
+                    {pageNumbers.length > 0 &&
+                        pageNumbers.map((p, i) => {
+                            return (
+                                <button
+                                    disabled={i === pagina}
+                                    className={styles.btnPaginacion}
+                                    key={i}
+                                    onClick={() => handleAddPagina(p)}>
+                                    {p + 1}
+                                </button>
+                            );
+                        })}
+                    {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
+                </div>
+            </>
+        )
+    }
 }
 
 

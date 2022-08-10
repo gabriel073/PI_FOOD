@@ -1,63 +1,36 @@
-html{
-  height:100%;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-}
-*{
-  /* border: solid 2px black; */
- }
-
-body {
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-bottom: 40px;
-  background: rgb(20,241,2);
-background: linear-gradient(198deg, rgba(20,241,2,1) 2%, rgba(84,233,33,0.8855917366946778) 35%, rgba(186,242,194,0.938813025210084) 87%);
-}
-.containerPrincipal {
-  width: 100%;
-  margin: auto;
-  text-align: center;
-  /* border: solid 2px black; */
-}
-.navBar {
+.containerErrorNoFound {
   display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  height: 3rem;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: large;
-  /* border: solid 2px black; */
-}
-
-.buttonSearch {
-  background-color: linear-gradient(
-    39deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(66, 244, 6, 1) 27%,
-    rgba(227, 234, 236, 0.8603816526610644) 100%
-  );
+  justify-content: center;
+  align-items: center;
   border: solid 2px black;
-  cursor: pointer;
-  padding: 10px;
 }
 
+.errorNoFound {
+  font-size: 10rem;
+  text-align: center;
+}
 
 .containerCards {
-  width: 100%;
+  max-width: 100%;
+  align-content: flex-end;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: solid 7px black;
+}
+.containerTitle {
   display: flex;
-  max-width: 1400px;
-  margin: auto;
-  flex-wrap: wrap;
   justify-content: center;
 }
 .title {
-  font-size: 4rem;
-  margin-top: 50px;
+  margin-top: 60px;
+  font-size: 7rem;
   font-family: "Mochiy Pop One", "sans-serif ";
 }
+
 .foodTitle {
   font-size: 2rem;
   margin-bottom: 6px;
@@ -81,19 +54,30 @@ background: linear-gradient(198deg, rgba(20,241,2,1) 2%, rgba(84,233,33,0.885591
 }
 
 .containerPaginacion {
-  margin: auto;
+  margin-bottom: -40px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 20rem;
-  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  border: solid 2px black;
+  background-color: darkgreen;
 }
 
 .btnAtras,
 .btnAdelante {
-  width: 20rem;
+  width: 10rem;
+  height: 3rem;
   margin: 3px;
   cursor: pointer;
   border: solid 2px black;
   background: rgba(255, 255, 255, 0.104);
+}
+
+.btnPaginacion {
+  border: solid 2px black;
+  height: 50%;
+  width: 2rem;
+  margin: 0 5px 0 5px;
 }
