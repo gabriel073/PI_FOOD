@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getDiets } from '../../actions';
+import imgNavBar from '../../imgs/verduras-navBar.jpg'
 
 
 function MenuPrincipal() {
@@ -16,6 +17,7 @@ function MenuPrincipal() {
   
     return (
         <div className={styles.navBar}>
+            <img className={styles.imgNavBar} src={imgNavBar}/>
             <Link to={`/`}className={styles.linkHome}>Go Home</Link>
             <Search />
             <Link to={`/recipe`}className={styles.newRecipe}>+ New Recipe</Link>

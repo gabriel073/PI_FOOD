@@ -1,4 +1,23 @@
-.pacMan {
+.containerSpinner{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  /* margin: auto; */
+   width: 30rem;
+
+
+  /* border: solid 2px black; */
+}
+
+.loading{
+font-size: 30px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+letter-spacing: 10px;  
+margin: auto;
+/* border: solid 2px black; */
+}
+
+.pacMan { 
   border-radius: 50%;
   margin: 0 auto;
   margin-top: 10em;
@@ -6,13 +25,14 @@
   background: #f00;
   transform-origin: bottom;
   animation: eating-top 0.5s infinite;
- 
 }
+
 .pacMan,
 .pacMan::before {
   width: 70px;
   height: calc(70px/2);
   background: #f4bc05;
+ 
 }
 .pacMan::before {
   content: '';
@@ -79,17 +99,4 @@
   }
 }
 
-.containerSpinner{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 565px;
-  margin-top: 80px;
-}
 
-.loading{
-font-size: 30px;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-letter-spacing: 10px;  
-margin: auto;
-/* border: solid 2px black; */
-}

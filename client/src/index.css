@@ -32,7 +32,7 @@ code {
 }
 
 /* Evitando problemas con las imagenes */
-img, picture, video, iframe, figure {
+ picture, video, iframe, figure {
   max-width: 100%;
   width: 100%;
   display: block; 

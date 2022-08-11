@@ -4,8 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import { uploadRecipe } from "../../actions";
 import styles from "./newRecipe.module.css";
 
-
-
 export default function NewRecipe() {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -67,12 +65,6 @@ export default function NewRecipe() {
         if (!patternURL.test(recipe.img)) {
             return setImageError("enter format url image");
         }
-        // if (recipe.steps) {
-        //     return setStepsError("enter a steps correct for your recipe");
-        // }
-        // if (!recipe.diets || recipe.diets.length === 0) {
-        //     return setDietsError("enter at least one diet");
-        // }
 
         dispatch(uploadRecipe(recipe));
         setRecipe({
@@ -105,10 +97,13 @@ export default function NewRecipe() {
 
     return (
         <>
-            <Link to={'/recipes'}
+        <div className={styles.containerPrincipal}>
+            <div className={styles.containerBackHome}>
+                <Link to={'/recipes'}
                     className={styles.backHome}>
-                    🡸
+                    🡸 Back
                 </Link>
+            </div>
             <div className={styles.containerForm}>
                 <div className={styles.titleFormDiv}>
                     <h1 className={styles.titleForm}>
@@ -116,7 +111,7 @@ export default function NewRecipe() {
                         YOUR <span className={styles.titleRecipe}>RECIPE</span>
                     </h1>
                 </div>
-                <form action="POST">
+                <form className={styles.form} action="POST">
                     <label className={styles.titleInput}>Name: </label>
                     <input
                         placeholder="Ej: Strawberries with cream"
@@ -125,6 +120,7 @@ export default function NewRecipe() {
                         className={styles.input}
                         value={recipe.name}
                         onChange={handleInputsChange} />
+                        *campo obligatorio
                     <div className={styles.danger}>
                         {nameError && <p>{nameError}</p>}
                     </div>
@@ -137,6 +133,7 @@ export default function NewRecipe() {
                         className={styles.input}
                         value={recipe.summary}
                         onChange={handleInputsChange} />
+                        *campo obligatorio
                     <div className={styles.danger}>
                         {summaryError && <p>{summaryError}</p>}
                     </div>
@@ -152,6 +149,7 @@ export default function NewRecipe() {
                         className={styles.input}
                         value={recipe.healthScore}
                         onChange={handleInputsChange} />
+                        *campo obligatorio
                     <div className={styles.danger}>
                         {healthScoreError && <p>{healthScoreError}</p>}
                     </div>
@@ -164,7 +162,7 @@ export default function NewRecipe() {
                         className={styles.input}
                         value={recipe.img}
                         onChange={handleInputsChange} />
-                    <div className={styles.danger}>
+                    <div className={styles.dangerImg}>
                         {imageError && <p>{imageError}</p>}
                     </div>
 
@@ -202,6 +200,7 @@ export default function NewRecipe() {
                         <button className={styles.button} onClick={handleBackSubmit}>Cancelar</button>
                     </div>
                 </form>
+            </div>
             </div>
         </>
     );
