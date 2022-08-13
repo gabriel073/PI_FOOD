@@ -1,16 +1,23 @@
 .containerErrorNoFound {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 40rem;
-  border: solid 2px black;
+  /* align-items: center; */
+  /* height: 80%; */
+  /* border: solid 2px black; */
+  overflow-y: hidden; 
 }
 
 .errorNoFound {
-  font-size: 10rem;
-  text-align: center;
+width: 100%;
+margin-top: -100px;
+/* height: 170%; */
+/* margin-bottom: -500px; */
+/* clip-path: inset(200px 0); */
+overflow-y: hidden; 
+/* height: 20rem; */
+/* margin-bottom: 2250px; */
+} 
 
-}
 .containerPrincipal{
   background-color: rgb(174,236,9);
   background: linear-gradient(24deg, rgba(174,236,9,1) 0%, rgba(199,51,10,0.7903536414565826) 33%, rgba(255,51,0,1) 100%);

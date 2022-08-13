@@ -42,9 +42,10 @@ export default function RecipeDetails(props) {
                                 <img src={details.img} className={styles.img} alt="photo_racipe" />
 
                                 <p className={styles.containerPharr}>
-                                    <span className={styles.dietsText}>
+                                  <span className={styles.dietsText}>
                                         Diets:<br/>
-                                    </span>{details.diets}
+                                    </span> {details.diets}
+                                    
                                 </p>
 
                                 <p className={styles.containerPharr}>

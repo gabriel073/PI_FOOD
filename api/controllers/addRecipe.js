@@ -4,18 +4,18 @@ const { Recipe, Diet } = require("../src/db.js");
 exports.addRecipe = async (req, res) => {
   const { name, summary, img, healthScore, steps, diets } = req.body;
 
-  // if (!name)
-  //   return res.status(400).json("The name is required");
-  // if (!req.body)
-  //   return res.status(400).json("The necessary information was not passed on");
-  //   if (!summary)
-  //   return res.status(400).json("The summary is required");
-  //   if (!higthScore)
-  //   return res.status(400).json("The higthScore is required");
-  //   if (!steps)
-  //   return res.status(400).json("The steps is required");
-  //   if (!diets)
-  //   return res.status(400).json("The diets is required");
+  if (!name)
+    return res.status(400).json("The name is required");
+  if (!req.body)
+    return res.status(400).json("The necessary information was not passed on");
+    if (!summary)
+    return res.status(400).json("The summary is required");
+        if (!higthScore)
+    return res.status(400).json("The higthScore is required");  
+      if (!steps)
+    return res.status(400).json("The steps is required");
+    if (!diets)
+    return res.status(400).json("The diets is required");
 
 
 //   if (!name || !description || !released || !rating || !genres || !image || !platforms) {

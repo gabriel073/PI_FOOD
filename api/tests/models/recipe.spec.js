@@ -7,7 +7,7 @@ describe('Recipe model', () => {
       console.error('Unable to connect to the database:', err);
     }));
   describe('Validators', () => {
-    beforeEach(() => Recipe.sync({ force: true }));
+    beforeEach(() => Recipe.sync({ force: false }));
     describe('name', () => {
       it('should throw an error if name is null', (done) => {
         Recipe.create({})
@@ -19,4 +19,20 @@ describe('Recipe model', () => {
       });
     });
   });
+
+  describe('summary', () => {
+      it('should work when its a valid summary', () => {
+      Recipe.create({ summary: 'Description of Recipe...', name: 'Pollo al Horno con papas' });
+    });
+  });
+
+  describe('healthScore', () => {
+   
+    it('should work when its a valid healthScore', () => {
+      Recipe.create({ healthScore: 10,  summary: 'Description of Recipe...', name: 'Pollo al Horno con batatas' });
+    });
+  });
+
+
+
 });

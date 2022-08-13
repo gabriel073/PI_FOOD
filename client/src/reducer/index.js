@@ -30,7 +30,7 @@ function rootReducer(state = initialState, action) {
     if (action.type === GET_RECIPE_DETAILS) {
         return {
             ...state,
-            details: action.payload,
+             details: action.payload
         }
     }
 
@@ -43,8 +43,7 @@ function rootReducer(state = initialState, action) {
 
     if (action.type === SEARCH_RECIPE) {
         const filtered = state.recipes.filter((dato) => dato.name.toLowerCase()
-            .includes(action.payload.toLowerCase()))
-     
+            .includes(action.payload.toLowerCase()))     
         return {
             ...state,
             filteredRecipes: filtered.length === 0 ? "No Hay Recetas" : filtered,
@@ -56,14 +55,14 @@ function rootReducer(state = initialState, action) {
         if (action.payload === "alfaAsc") {
             return {
                 ...state,
-                filteredRecipes: [...state.recipes].sort((a, b) => a.title.localeCompare(b.title))
+                filteredRecipes: [...state.recipes].sort((a, b) => a.name.localeCompare(b.name))
             }
         }
 
         if (action.payload === "alfaDesc") {
             return {
                 ...state,
-                filteredRecipes: [...state.recipes].sort((a, b) => b.title.localeCompare(a.title))
+                filteredRecipes: [...state.recipes].sort((a, b) => b.name.localeCompare(a.name))
             }
         }
 

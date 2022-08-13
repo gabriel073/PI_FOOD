@@ -56,7 +56,7 @@ export default function NewRecipe() {
             return setNameError("enter a title correct for your recipe");
         }
 
-        if (!recipe.summary || !patternText.test(recipe.title)) {
+        if (!recipe.summary) {
             return setSummaryError("enter a summary correct for your recipe");
         }
         if (parseInt(recipe.healthScore) < 0 || parseInt(recipe.healthScore) > 100) {

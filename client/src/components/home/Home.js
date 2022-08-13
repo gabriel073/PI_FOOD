@@ -5,7 +5,7 @@ import { getRecipes } from "../../actions";
 import styles from "./Home.module.css";
 import stylesSpinner from "../../components/spinner.module.css";
 import MenuPrincipal from "../menuPrincipal/MenuPrincipal";
-
+import recipeNotFound from '../../imgs/recipeNotFound2.jpg';
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -37,7 +37,12 @@ export default function Home() {
             <div>
                 <MenuPrincipal />
                 <div className={styles.containerErrorNoFound}>
-                    <p className={styles.errorNoFound}> "No se encuentra la receta"</p>
+                <Link to={'/recipes'}
+                    className={styles.backHome}>
+                    🡸
+                </Link>
+<img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'}/>
+
                 </div>
             </div>
         )
