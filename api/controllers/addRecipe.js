@@ -10,8 +10,8 @@ exports.addRecipe = async (req, res) => {
     return res.status(400).json("The necessary information was not passed on");
     if (!summary)
     return res.status(400).json("The summary is required");
-        if (!higthScore)
-    return res.status(400).json("The higthScore is required");  
+        if (!healthScore)
+    return res.status(400).json("The healthScore is required");  
       if (!steps)
     return res.status(400).json("The steps is required");
     if (!diets)

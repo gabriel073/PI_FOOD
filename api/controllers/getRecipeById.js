@@ -26,9 +26,8 @@ exports.getRecipeById = async (req, res) => {
                     .filter((d) => d != null)
                     .join(", "),
                 healthScore: data.healthScore,
-                steps: data.analyzedInstructions.length > 0 ? data.analyzedInstructions[0].steps[0].step : ""
-            };
-         
+                steps: data.analyzedInstructions.length > 0 ? data.analyzedInstructions[0].steps[0].step : "* Sin Dato"
+            };         
 
             return res.status(200).send(recipe);
         } else {

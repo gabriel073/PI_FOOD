@@ -1,13 +1,8 @@
 .containerSpinner{
   display: flex;
-  justify-content: center;
-  justify-items: center;
-  /* margin: auto; */
-   width: 30rem;
-
-
-  /* border: solid 2px black; */
-}
+  justify-content: start;
+   width: 20rem;
+  }
 
 .loading{
 font-size: 30px;

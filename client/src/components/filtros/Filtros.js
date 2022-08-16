@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import styles from "./Filtros.module.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { orderRecipe, filterRecipe } from '../../actions';

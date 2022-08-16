@@ -17,7 +17,7 @@ function MenuPrincipal() {
   
     return (
         <div className={styles.navBar}>
-            <img className={styles.imgNavBar} src={imgNavBar}/>
+            <img className={styles.imgNavBar} alt={'imgNavBar'} src={imgNavBar}/>
             <Link to={`/`}className={styles.linkHome}>Go Home</Link>
             <Search />
             <Link to={`/recipe`}className={styles.newRecipe}>+ New Recipe</Link>

@@ -127,7 +127,7 @@ export default function NewRecipe() {
 
                     <label className={styles.titleInput}>Summary: </label>
                     <input
-                        placeholder="Ej: fresh sweet and sour "
+                        placeholder= "Ej: fresh sweet and sour"
                         type="text"
                         name="summary"
                         className={styles.input}

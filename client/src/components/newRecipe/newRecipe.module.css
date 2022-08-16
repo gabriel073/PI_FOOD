@@ -27,7 +27,7 @@ background-position-y: 60%;
   margin-top: 40px;
 }
 .containerForm {
-  margin-top: -25px;
+  margin-top: -85px;
   box-sizing: border-box;
   margin-left: 400px;
   justify-content: center;
@@ -51,7 +51,7 @@ background-position-y: 60%;
 .titleForm {
   justify-content: center;
   font-size: 80px;
-  margin-top: 70px;
+  margin-top: 250px;
   margin-right: 40px;
   /* border: solid 2px black; */
 }
@@ -90,7 +90,7 @@ background-position-y: 60%;
 }
 
 .danger{
-  margin-top: -15px;
+  margin-top: -5px;
   color: red;
   margin-bottom: 25px;
 }

@@ -7,12 +7,12 @@ import stylesSpinner from "../../components/spinner.module.css";
 import MenuPrincipal from "../menuPrincipal/MenuPrincipal";
 import recipeNotFound from '../../imgs/recipeNotFound2.jpg';
 
+
 export default function Home() {
     const dispatch = useDispatch();
-    const { filteredRecipes, recipes } = useSelector(state => state);
+    let { filteredRecipes, recipes } = useSelector(state => state);
     const [pagina, setPagina] = useState(0);
 
-    // es el equivalente a los desmonta y monta componentes
     useEffect(() => {
         if (recipes.length === 0) {
             dispatch(getRecipes())
@@ -37,11 +37,8 @@ export default function Home() {
             <div>
                 <MenuPrincipal />
                 <div className={styles.containerErrorNoFound}>
-                <Link to={'/recipes'}
-                    className={styles.backHome}>
-                    🡸
-                </Link>
-<img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'}/>
+            
+                    <img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'} />
 
                 </div>
             </div>
@@ -64,7 +61,6 @@ export default function Home() {
                     <div className={styles.containerCards}>
                         {currentRecipes.length > 0 ?
                             currentRecipes.map((r) => (
-
                                 <div key={r.id} className={styles.card}>
                                     <Link to={`/recipes/${r.id}`}>
                                         <h2 className={styles.foodTitle}>{r.name}</h2>
@@ -81,24 +77,24 @@ export default function Home() {
                                 </div>
                             </div>}
                     </div>
-                <div className={styles.containerPaginacion}>
-                    {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
-                    {pageNumbers.length > 0 &&
-                        pageNumbers.map((p, i) => {
-                            return (
-                                <button
-                                    disabled={i === pagina}
-                                    className={styles.btnPaginacion}
-                                    key={i}
-                                    onClick={() => handleAddPagina(p)}>
-                                    {p + 1}
-                                </button>
-                            );
-                        })}
-                    {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
-                </div>
 
-                        </div>
+                    <div className={styles.containerPaginacion}>
+                        { pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
+                        { pageNumbers.length > 0 &&
+                            pageNumbers.map((p, i) => {
+                                return (
+                                    <button
+                                        disabled={i === pagina}
+                                        className={styles.btnPaginacion}
+                                        key={i}
+                                        onClick={() => handleAddPagina(p)}>
+                                        {p + 1}
+                                    </button>
+                                );
+                            })}
+                        {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
+                    </div>
+                </div>
             </>
         )
     }
