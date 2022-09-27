@@ -13,7 +13,7 @@ const {
        host: DB_HOST,
        port: 5432,
        username: DB_USER,
-       password: DB_PASSWORD,
+       password: DB_PASSWORD, 
        pool: {
          max: 3,
          Min: 1,
@@ -25,15 +25,17 @@ const {
            // Ref .: https://github.com/brianc/node postgres/issues/2009
            rejectUnauthorized: false,
          },
-         keepAlive:true,
+         keepAlive: true,
         },
         ssl: true,
         })
         : new Sequelize(
-          `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+          `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, 
+          {  logging: false,  native: false }
+        );
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
 const basename = path.basename(__filename);
 
 const modelDefiners = [];

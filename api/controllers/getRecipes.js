@@ -18,10 +18,8 @@ exports.getRecipes = async (req, res) => {
                     .filter((d) => d != null)
                     .join(", "),
             };
-        });         
-
+        });
         return res.status(200).send(allRecipes);
-        
     } catch (error) {
         res.send(error);
     }

@@ -13,6 +13,7 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 
 router.get('/recipes', getRecipes);
+router.delete('/recipes', )
 router.post('/recipe', addRecipe); 
 router.get('/diets', getDiets);
 router.get('/recipes/:id', getRecipeById);

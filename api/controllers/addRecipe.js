@@ -18,12 +18,6 @@ exports.addRecipe = async (req, res) => {
     return res.status(400).json("The diets is required");
 
 
-//   if (!name || !description || !released || !rating || !genres || !image || !platforms) {
-//     return res.status(400).json({
-//         message: "All fields are required",
-//     });
-// }
-
   try {
     const newRecipe = await Recipe.create({
       name:name, img:img, summary:summary, healthScore:healthScore, steps:steps
