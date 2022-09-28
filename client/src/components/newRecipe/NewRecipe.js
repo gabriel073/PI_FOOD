@@ -41,7 +41,7 @@ export default function NewRecipe() {
     };
 
     const patternText = new RegExp('^[A-Z]+$', 'i');
-    const patternURL = new RegExp(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi);
+    const patternURL = new RegExp(/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi);
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
@@ -55,7 +55,6 @@ export default function NewRecipe() {
         if (!recipe.name || !patternText.test(recipe.name)) {
             return setNameError("enter a title correct for your recipe");
         }
-
         if (!recipe.summary) {
             return setSummaryError("enter a summary correct for your recipe");
         }
@@ -67,6 +66,7 @@ export default function NewRecipe() {
         }
 
         dispatch(uploadRecipe(recipe));
+        
         setRecipe({
             name: "",
             summary: "",

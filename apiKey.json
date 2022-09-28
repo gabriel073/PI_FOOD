@@ -1,0 +1,66 @@
+
+  En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
+
+```env
+DB_USER=usuariodepostgres
+DB_PASSWORD=passwordDePostgres
+DB_HOST=localhost
+```
+
+
+    // "start": "nodemon -L",
+
+
+Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+
+Adicionalmente será necesario que creen desde psql una base de datos llamada `food`
+
+ Agregar la clave en el archivo `.env`
+
+{
+  
+   
+    API_KEY3: '87e508280cf7416b88994f8533893e9c'
+}
+
+`?apiKey=${YOUR_API_KEY}`
+
+
+*************************************************************
+
+### Únicos Endpoints/Flags que pueden utilizar
+
+- GET <https://api.spoonacular.com/recipes/complexSearch>
+  - Para obtener mayor información sobre las recetas, como por ejemplo el tipo de dieta deben agregar el flag `&addRecipeInformation=true` a este endpoint
+  - Para los tipos de dieta deben tener en cuenta las propiedades vegetarian, vegan, glutenFree por un lado y también analizar las que se incluyan dentro de la propiedad `diets`
+- GET <https://api.spoonacular.com/recipes/{id}/information>
+
+Aquí hay un ejemplo completo con dos parámetros apiKeyy includeNutrition: https://api.spoonacular.com/recipes/716429/information?apiKey=YOUR-API-KEY&includeNutrition=true .
+
+recetas/{id}/información
+
+******************************************************************
+ESTILOS:(CSS puro, CSS Modules o Styled Components)
+******************************************************************
+
+
+*******************RUTAS*****************************
+
+_IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes.
+
+- [ ] __GET /recipes?name="..."__:
+  - Obtener un listado de las recetas que contengan la palabra ingresada como query parameter
+  - Si no existe ninguna receta mostrar un mensaje adecuado
+- [ ] __GET /recipes/{idReceta}__:
+  - Obtener el detalle de una receta en particular
+  - Debe traer solo los datos pedidos en la ruta de detalle de receta
+  - Incluir los tipos de dieta asociados
+- [ ] __POST /recipes__:
+  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de recetas por body
+  - Crea una receta en la base de datos relacionada con sus tipos de dietas.
+- [ ] __GET /diets__:
+  - Obtener todos los tipos de dieta posibles
+  - En una primera instancia, cuando no exista ninguno, deberán precargar la base de datos con los tipos de datos indicados por spoonacular [acá](https://spoonacular.com/food-api/docs#Diets)
+
+
+  // return res.status(200).send(breeds.sort((a,b) => a.name.localeCompare(b.name)).slice(offset, limit));

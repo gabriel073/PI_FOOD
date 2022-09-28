@@ -11,6 +11,9 @@ import recipeNotFound from '../../imgs/recipeNotFound2.jpg';
 export default function Home() {
     const dispatch = useDispatch();
     let { filteredRecipes, recipes } = useSelector(state => state);
+
+    // let filteredRecipes = useSelector(state => state.filteredRecipes);
+    
     const [pagina, setPagina] = useState(0);
 
     useEffect(() => {

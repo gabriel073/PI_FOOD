@@ -9,12 +9,10 @@ export default function Search() {
     const [search, setSearch] = useState(searching || "");
     const dispatch = useDispatch();
 
-
     const searcher = (e) => {
         setSearch(e.target.value);
         dispatch(searchRecipe(e.target.value));
     }
-
     return (
         <div className={styles.containerSearch}>
             <input type="text"

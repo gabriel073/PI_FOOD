@@ -17,16 +17,13 @@ export default function RecipeDetails(props) {
         dispatch(getRecipeDetails(id))
     }, [dispatch, id])
 
-
+ 
     const { details } = useSelector((state) => state)
 
     return (
         <>
             <MenuPrincipal />
-
             <div className={styles.containerPrincipal}>
-
-
                 <h1 className={styles.title}>Recipe Detail</h1>
                 <Link to={'/recipes'}
                     className={styles.backHome}>
@@ -75,7 +72,6 @@ export default function RecipeDetails(props) {
                                         </p>
                                         : null
                                 }
-
                             </div>
                             :
                             <div className={stylesSpinner.containerSpinner}>
