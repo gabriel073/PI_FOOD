@@ -24,6 +24,6 @@ const { conn } = require('./src/db.js');
 conn.sync({ force: true }).then(() => {
   console.log('Modelos Sincronizados'); 
   server.listen(process.env.PORT, () => {
-    console.log('listening at 3001'); 
+    console.log('listening at 443'); 
   });
 });
