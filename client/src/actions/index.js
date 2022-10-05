@@ -7,10 +7,9 @@ export const GET_NEW_RECIPE = "GET_NEW_RECIPE";
 export const FILTER_RECIPE = "FILTER_RECIPE";
 export const EMPTY_RECIPE_DETAILS = "EMPTY_RECIPE_DETAILS";
 export const POST_RECIPE = " POST_RECIPE";
-import dotenv from "dotenv";
-dotenv.config();
+import axios from "axios";
 
-const axios = require('axios');
+
 
 export function getRecipes() {
     return function (dispatch) {
