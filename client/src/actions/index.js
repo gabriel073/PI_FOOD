@@ -17,7 +17,9 @@ export function getRecipes() {
         return axios.get(`/recipes`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPES, payload: data })
-            })
+            }).catch(function (error) {
+                console.log(error.toJSON());
+              });
     }
 }
 
