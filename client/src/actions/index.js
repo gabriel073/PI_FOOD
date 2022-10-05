@@ -7,12 +7,14 @@ export const GET_NEW_RECIPE = "GET_NEW_RECIPE";
 export const FILTER_RECIPE = "FILTER_RECIPE";
 export const EMPTY_RECIPE_DETAILS = "EMPTY_RECIPE_DETAILS";
 export const POST_RECIPE = " POST_RECIPE";
+import dotenv from "dotenv";
+dotenv.config();
 
 const axios = require('axios');
 
 export function getRecipes() {
     return function (dispatch) {
-        return axios.get(`http://54.175.191.76/recipes`)
+        return axios.get(`http://${IP}/recipes`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPES, payload: data })
             })
@@ -21,7 +23,7 @@ export function getRecipes() {
 
 export function getRecipeDetails(id) {
     return function (dispatch) {
-        return axios.get(`http://54.175.191.76/recipes/${id}`)
+        return axios.get(`http://${IP}/recipes/${id}`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPE_DETAILS, payload: data })
             })
@@ -48,7 +50,7 @@ export function orderRecipe(data) {
 
 export function getDiets() {
     return function (dispatch) {
-        return axios.get(`http://54.175.191.76/diets`)
+        return axios.get(`http://${IP}/diets`)
             .then(({ data }) => {
                 dispatch({ type: GET_DIETS, payload: data })
             })
@@ -64,7 +66,7 @@ export function filterRecipe(data) {
 
 export function uploadRecipe(recipe) {
     return function (dispatch) {
-        return axios.post(`http://54.175.191.76/recipe`, recipe)
+        return axios.post(`http://${IP}/recipe`, recipe)
             .then(({ data }) => {
                 dispatch({ type: POST_RECIPE, payload: data });
             })
