@@ -12,9 +12,9 @@ export const POST_RECIPE = " POST_RECIPE";
 
 
 
-export function getRecipes() {
+export async function getRecipes() {
     return function (dispatch) {
-        return axios.get(`/recipes`)
+        return await axios.get(`/recipes`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPES, payload: data })
             }).catch(function (error) {
