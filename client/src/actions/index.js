@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const GET_RECIPES = "GET_RECIPES";
 export const GET_RECIPE_DETAILS = "GET_RECIPE_DETAILS";
 export const SEARCH_RECIPE = "SEARCH_RECIPE";
@@ -7,9 +9,8 @@ export const GET_NEW_RECIPE = "GET_NEW_RECIPE";
 export const FILTER_RECIPE = "FILTER_RECIPE";
 export const EMPTY_RECIPE_DETAILS = "EMPTY_RECIPE_DETAILS";
 export const POST_RECIPE = " POST_RECIPE";
-import axios from "axios";
 
-console.log(axios.defaults.baseURL);
+
 
 export function getRecipes() {
     return function (dispatch) {
