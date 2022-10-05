@@ -14,7 +14,7 @@ const axios = require('axios');
 
 export function getRecipes() {
     return function (dispatch) {
-        return axios.get(`http://${IP}/recipes`)
+        return axios.get(`http://172.26.2.153/recipes`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPES, payload: data })
             })
@@ -23,7 +23,7 @@ export function getRecipes() {
 
 export function getRecipeDetails(id) {
     return function (dispatch) {
-        return axios.get(`http://${IP}/recipes/${id}`)
+        return axios.get(`http://172.26.2.153/recipes/${id}`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPE_DETAILS, payload: data })
             })
@@ -50,7 +50,7 @@ export function orderRecipe(data) {
 
 export function getDiets() {
     return function (dispatch) {
-        return axios.get(`http://${IP}/diets`)
+        return axios.get(`http://172.26.2.153/diets`)
             .then(({ data }) => {
                 dispatch({ type: GET_DIETS, payload: data })
             })
@@ -66,7 +66,7 @@ export function filterRecipe(data) {
 
 export function uploadRecipe(recipe) {
     return function (dispatch) {
-        return axios.post(`http://${IP}/recipe`, recipe)
+        return axios.post(`http://172.26.2.153/recipe`, recipe)
             .then(({ data }) => {
                 dispatch({ type: POST_RECIPE, payload: data });
             })
