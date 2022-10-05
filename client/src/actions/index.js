@@ -9,7 +9,7 @@ export const EMPTY_RECIPE_DETAILS = "EMPTY_RECIPE_DETAILS";
 export const POST_RECIPE = " POST_RECIPE";
 import axios from "axios";
 
-
+console.log(axios.defaults.baseURL);
 
 export function getRecipes() {
     return function (dispatch) {
