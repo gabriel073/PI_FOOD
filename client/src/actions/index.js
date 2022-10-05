@@ -12,7 +12,7 @@ const axios = require('axios');
 
 export function getRecipes() {
     return function (dispatch) {
-        return axios.get(`http://172.26.2.153/recipes`)
+        return axios.get(`http://54.175.191.76/recipes`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPES, payload: data })
             })
@@ -21,7 +21,7 @@ export function getRecipes() {
 
 export function getRecipeDetails(id) {
     return function (dispatch) {
-        return axios.get(`http://172.26.2.153/recipes/${id}`)
+        return axios.get(`http://54.175.191.76/recipes/${id}`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPE_DETAILS, payload: data })
             })
@@ -48,7 +48,7 @@ export function orderRecipe(data) {
 
 export function getDiets() {
     return function (dispatch) {
-        return axios.get(`http://172.26.2.153/diets`)
+        return axios.get(`http://54.175.191.76/diets`)
             .then(({ data }) => {
                 dispatch({ type: GET_DIETS, payload: data })
             })
