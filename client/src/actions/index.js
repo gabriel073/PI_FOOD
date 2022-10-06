@@ -14,18 +14,16 @@ export const POST_RECIPE = " POST_RECIPE";
 
 export  function getRecipes() {
     return async function (dispatch) {
-        return await axios.get(`/recipes`)
+        return await axios.get(`http://54.175.191.76:3001/recipes`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPES, payload: data })
-            }).catch(function (error) {
-                console.log(error.toJSON());
-              });
+            })
     }
 }
 
 export function getRecipeDetails(id) {
     return function (dispatch) {
-        return axios.get(`/recipes/${id}`)
+        return axios.get(`http://54.175.191.76:3001/recipes/${id}`)
             .then(({ data }) => {
                 dispatch({ type: GET_RECIPE_DETAILS, payload: data })
             })
@@ -52,7 +50,7 @@ export function orderRecipe(data) {
 
 export function getDiets() {
     return function (dispatch) {
-        return axios.get(`/diets`)
+        return axios.get(`http://54.175.191.76:3001/diets`)
             .then(({ data }) => {
                 dispatch({ type: GET_DIETS, payload: data })
             })
@@ -68,7 +66,7 @@ export function filterRecipe(data) {
 
 export function uploadRecipe(recipe) {
     return function (dispatch) {
-        return axios.post(`/recipe`, recipe)
+        return axios.post(`http://54.175.191.76:3001/recipe`, recipe)
             .then(({ data }) => {
                 dispatch({ type: POST_RECIPE, payload: data });
             })
