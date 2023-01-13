@@ -5,7 +5,9 @@ import NavBar from "./components/navBar/NavBar.js";
 import Home from "./components/home/Home.js";
 import RecipeDetails  from './components/recipeDetails/RecipeDetails.js';
 import NewRecipe from './components/newRecipe/NewRecipe';
+import axios from 'axios';
 
+axios.defaults.baseURL = 'http://localhost:3001/'
 
 
 function App() {
