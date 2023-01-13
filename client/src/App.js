@@ -7,7 +7,7 @@ import RecipeDetails  from './components/recipeDetails/RecipeDetails.js';
 import NewRecipe from './components/newRecipe/NewRecipe';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://54.175.191.76:3001'
+axios.defaults.baseURL = 'http://54.175.191.76:3001'
 
 
 function App() {
