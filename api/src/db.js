@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env;
+  DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT} = process.env;
 
   let sequelize =
     process.env.NODE_ENV === "production"
@@ -14,6 +14,7 @@ const {
        port: 5432,
        username: DB_USER,
        password: DB_PASSWORD, 
+       dbport: DB_PORT,
        pool: {
          max: 3,
          Min: 1,
