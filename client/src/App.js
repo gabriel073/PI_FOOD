@@ -7,7 +7,7 @@ import RecipeDetails  from './components/recipeDetails/RecipeDetails.js';
 import NewRecipe from './components/newRecipe/NewRecipe';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://pifood-production-e359.up.railway.app'
+axios.defaults.baseURL = 'https://pifood-production-e359.up.railway.app' 
 
 
 function App() {
