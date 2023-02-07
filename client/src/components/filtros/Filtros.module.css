@@ -1,3 +1,12 @@
+.containerSelectOrd {
+  display: flex; 
+  justify-content: center;
+  margin: 0 30px 30px 30px;
+  width: 100%;
+  position: relative;
+  top: 6rem;
+ }
+
 .ordenar,
 .filtrar {
   cursor: pointer;
@@ -9,17 +18,11 @@
     rgba(66, 244, 6, 1) 27%,
     rgba(227, 234, 236, 0.8603816526610644) 100%
   );
+  
 }
-.containerSelectOrd {
-  display: flex; 
-  margin: 20px;
-  width: 30%;
-  /* border: solid 2px black; */
-}
-
 
 .labels{
-  margin: 10px;
+  margin: 10px 30px;
 display: flex;
 flex-direction: column;
 text-align: center;

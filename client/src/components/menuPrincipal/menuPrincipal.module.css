@@ -26,3 +26,7 @@
   justify-self: center;
   border: solid 2px black;
 }
+h5{
+  display: flex;
+  align-items: center;
+}

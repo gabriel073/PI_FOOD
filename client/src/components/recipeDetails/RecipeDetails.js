@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React,  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./RecipeDetail.module.css";
 import stylesSpinner from "../../components/spinner.module.css";
@@ -74,12 +74,14 @@ export default function RecipeDetails(props) {
                                 }
                             </div>
                             :
+                         
                             <div className={stylesSpinner.containerSpinner}>
                                 <div className={stylesSpinner.pacMan}>
                                 </div>
                                 <div className={stylesSpinner.loading}>Loading...
                                 </div>
                             </div>
+
                     }
                 </div>
             </div>

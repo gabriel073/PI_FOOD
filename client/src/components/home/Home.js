@@ -6,6 +6,7 @@ import styles from "./Home.module.css";
 import stylesSpinner from "../../components/spinner.module.css";
 import MenuPrincipal from "../menuPrincipal/MenuPrincipal";
 import recipeNotFound from '../../imgs/recipeNotFound2.jpg';
+import Filtros from '../filtros/Filtros';
 
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
     let { filteredRecipes, recipes } = useSelector(state => state);
 
     // let filteredRecipes = useSelector(state => state.filteredRecipes);
-    
+
     const [pagina, setPagina] = useState(0);
 
     useEffect(() => {
@@ -37,14 +38,15 @@ export default function Home() {
     const limit = offset + itemsPorPagina;
     if (typeof filteredRecipes === "string") {
         return (
-            <div>
-                <MenuPrincipal />
-                <div className={styles.containerErrorNoFound}>
-            
-                    <img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'} />
+            <>
+                <div>
+                    <MenuPrincipal />
+                    <div className={styles.containerErrorNoFound}>
+                        <img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'} />
+                    </div>
 
                 </div>
-            </div>
+            </>
         )
     } else {
         const totalItems = filteredRecipes.length;
@@ -58,32 +60,35 @@ export default function Home() {
             <>
                 <MenuPrincipal />
                 <div className={styles.containerPrincipal}>
-                    <div className={styles.containerTitle}>
-                        <h1 className={styles.title}>Recipes</h1>
+                    <div>
+                        <Filtros />
                     </div>
+
                     <div className={styles.containerCards}>
-                        {currentRecipes.length > 0 ?
+                         {currentRecipes.length > 0 ?
                             currentRecipes.map((r) => (
                                 <div key={r.id} className={styles.card}>
                                     <Link to={`/recipes/${r.id}`}>
                                         <h2 className={styles.foodTitle}>{r.name}</h2>
                                         <img src={r.img} alt="photo_racipe" />
                                         <p className={styles.foodText}>Diets: {r.diets}</p>
-                                    </Link>
-                                </div>
-                            )
-                            )
-                            : <div className={stylesSpinner.containerSpinner}>
+                                    </Link> 
+                                </div> 
+                             ) 
+                            ) 
+                            :
+                            <div className={stylesSpinner.containerSpinner}>
                                 <div className={stylesSpinner.pacMan}>
                                 </div>
                                 <div className={stylesSpinner.loading}>Loading...
                                 </div>
-                            </div>}
+                            </div>
+                         } 
                     </div>
-
+                    
                     <div className={styles.containerPaginacion}>
-                        { pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
-                        { pageNumbers.length > 0 &&
+                     {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
+                        {pageNumbers.length > 0 &&
                             pageNumbers.map((p, i) => {
                                 return (
                                     <button

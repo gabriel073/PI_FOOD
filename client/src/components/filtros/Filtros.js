@@ -28,7 +28,6 @@ export default function Filtros() {
                     <option value="scoreMin">min score</option>
                     <option value="scoreHigh">high score</option>
                 </select>
-
                 <label className={styles.labels}>Types Diets</label>
                 <select name="dietType" className={styles.filtrar} onChange={(e) => handleSelectDiets(e)} >
                     <option value="">Original</option>

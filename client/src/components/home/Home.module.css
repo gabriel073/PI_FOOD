@@ -8,10 +8,6 @@
 width: 100%;
 margin-top: -100px;
 overflow-y: hidden; 
-/* margin-bottom: -500px; */
-/* clip-path: inset(200px 0); */
-/* height: 20rem; */
-/* margin-bottom: 2250px; */
 } 
 
 .backHome{
@@ -60,7 +56,9 @@ overflow-y: hidden;
   grid-row-gap: 4%;
   margin-bottom: 35px;
   padding: 2%;
-  /* border: solid 4px black; */
+  position: relative;
+  top: 10rem; 
+
 }
 
 .foodTitle {
