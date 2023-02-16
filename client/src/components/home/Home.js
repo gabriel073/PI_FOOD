@@ -52,7 +52,7 @@ export default function Home() {
         const cantPaginas = Math.ceil(totalItems / itemsPorPagina) - 1;
         const pageNumbers = [];
               const currentRecipes = filteredRecipes.slice(offset, limit);
-              console.log(filteredRecipes)
+        
         for (let i = 0; i <= cantPaginas; i++) {
             pageNumbers.push(i);
         }
@@ -62,11 +62,10 @@ export default function Home() {
                 <div className={styles.containerPrincipal}>
                     <div>
                         <Filtros />
-                    </div>
+                    </div> 
                   
                     <div className={styles.containerCards}>
-                         {currentRecipes.length > 0 ?
-                            currentRecipes.map((r) => (
+                         { currentRecipes.length > 0 ? currentRecipes.map((r) => (
                                 <div key={r.id} className={styles.card}>
                                     <Link to={`/recipes/${r.id}`}>
                                         <h2 className={styles.foodTitle}>{r.name}</h2>
@@ -81,10 +80,10 @@ export default function Home() {
                                  <div className={stylesSpinner.pacMan}>
                                  </div>
                                  <div className={stylesSpinner.loading}>Loading...
-                                 </div>
-                             </div>
+                                 </div> 
+                              </div> 
     
-                          } 
+                         }  
                     </div>
                    
                 

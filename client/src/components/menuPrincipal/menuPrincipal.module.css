@@ -1,7 +1,7 @@
 .navBar {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   height: 6rem;
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -12,7 +12,7 @@
 
 .linkHome {
   align-self: center;
-  /* justify-content: end; */
+  justify-content: flex-end;
   width: 10%;
   border: solid 2px black;
 }
