@@ -3,6 +3,7 @@ import styles from "./search.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { searchRecipe } from "../../actions";
 
+
 export default function Search() {
 
     const { searching } = useSelector(state => state)
@@ -20,6 +21,7 @@ export default function Search() {
                 className={styles.search}
                 placeholder="Search..."
                 onChange={searcher} />
+
         </div>
     );
 }

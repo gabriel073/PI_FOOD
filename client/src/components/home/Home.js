@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  React,  { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getRecipes } from "../../actions";
@@ -13,7 +13,6 @@ export default function Home() {
     const dispatch = useDispatch();
     let { filteredRecipes, recipes } = useSelector(state => state);
 
-    // let filteredRecipes = useSelector(state => state.filteredRecipes);
 
     const [pagina, setPagina] = useState(0);
 
@@ -52,18 +51,19 @@ export default function Home() {
         const totalItems = filteredRecipes.length;
         const cantPaginas = Math.ceil(totalItems / itemsPorPagina) - 1;
         const pageNumbers = [];
-        const currentRecipes = filteredRecipes.slice(offset, limit);
+              const currentRecipes = filteredRecipes.slice(offset, limit);
+              console.log(filteredRecipes)
         for (let i = 0; i <= cantPaginas; i++) {
             pageNumbers.push(i);
         }
         return (
-            <>
+            <>         
                 <MenuPrincipal />
                 <div className={styles.containerPrincipal}>
                     <div>
                         <Filtros />
                     </div>
-
+                  
                     <div className={styles.containerCards}>
                          {currentRecipes.length > 0 ?
                             currentRecipes.map((r) => (
@@ -75,17 +75,19 @@ export default function Home() {
                                     </Link> 
                                 </div> 
                              ) 
-                            ) 
-                            :
-                            <div className={stylesSpinner.containerSpinner}>
-                                <div className={stylesSpinner.pacMan}>
-                                </div>
-                                <div className={stylesSpinner.loading}>Loading...
-                                </div>
-                            </div>
-                         } 
+                             ) 
+                             :                            
+                             <div className={stylesSpinner.containerSpinner}>
+                                 <div className={stylesSpinner.pacMan}>
+                                 </div>
+                                 <div className={stylesSpinner.loading}>Loading...
+                                 </div>
+                             </div>
+    
+                          } 
                     </div>
-                    
+                   
+                
                     <div className={styles.containerPaginacion}>
                      {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
                         {pageNumbers.length > 0 &&
@@ -102,7 +104,7 @@ export default function Home() {
                             })}
                         {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
                     </div>
-                </div>
+                    </div>
             </>
         )
     }

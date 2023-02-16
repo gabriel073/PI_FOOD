@@ -1,11 +1,11 @@
 import Search from "../search/Search";
-import Filtros from "../filtros/Filtros";
 import styles from "./menuPrincipal.module.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getDiets } from '../../actions';
-import imgNavBar from '../../imgs/verduras-navBar.jpg'
+
+
 
 
 function MenuPrincipal() {
@@ -18,13 +18,13 @@ function MenuPrincipal() {
     return (
         <>
             <div className={styles.navBar}>
-                <h5>Food</h5>
-                {/* <img className={styles.imgNavBar} alt={'imgNavBar'} src={imgNavBar}/> */}
-                {/* <Link to={`/`}className={styles.linkHome}>Go Home</Link> */}
+                <h2>Food</h2>
                 <Search />
-                <Link to={`/recipe`} className={styles.newRecipe}> New Recipe</Link>
+                <button className={styles.newRecipe}>
+                    <Link to={`/recipe`} > New Recipe</Link>
+                </button>
             </div>
-          
+
         </>
     );
 }

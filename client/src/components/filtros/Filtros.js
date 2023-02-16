@@ -22,7 +22,7 @@ export default function Filtros() {
             <div className={styles.containerSelectOrd}>
                 <label className={styles.labels}>Order By</label>
                 <select name="ordenamiento" className={styles.ordenar} onChange={handleSelectChange}>
-                    <option value="original">Original</option>
+                    <option value="original">All</option>
                     <option value="alfaAsc">A-Z</option>
                     <option value="alfaDesc">Z-A</option>
                     <option value="scoreMin">min score</option>
@@ -30,7 +30,7 @@ export default function Filtros() {
                 </select>
                 <label className={styles.labels}>Types Diets</label>
                 <select name="dietType" className={styles.filtrar} onChange={(e) => handleSelectDiets(e)} >
-                    <option value="">Original</option>
+                    <option value="">All</option>
                     {diets && diets.map((d) => (
                         <option key={d.name} value={d.name}>{d.name}</option>
                     ))}

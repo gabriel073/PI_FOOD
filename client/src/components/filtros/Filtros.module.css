@@ -1,32 +1,28 @@
 .containerSelectOrd {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  margin: 0 30px 30px 30px;
+  /* align-items: end; */
   width: 100%;
-  position: relative;
-  top: 6rem;
- }
+  height: 10rem;
+}
 
 .ordenar,
 .filtrar {
   cursor: pointer;
   padding: 5px;
-  border: solid 2px black;
-  background-color: linear-gradient(
-    39deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(66, 244, 6, 1) 27%,
-    rgba(227, 234, 236, 0.8603816526610644) 100%
-  );
+  align-items: center;
+  border: solid 2px rgba(125, 215, 8, 0.926);
+  border-radius: 1rem;
+  color: rgba(125, 215, 8, 0.542);
   
 }
 
-.labels{
-  margin: 10px 30px;
-display: flex;
-flex-direction: column;
-text-align: center;
-justify-content: center;
+.labels {
+  align-items: center;
+  margin: 7px 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: grey;
 }
-
-
