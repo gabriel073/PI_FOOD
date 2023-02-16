@@ -1,4 +1,4 @@
-import  React,  { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getRecipes } from "../../actions";
@@ -51,44 +51,47 @@ export default function Home() {
         const totalItems = filteredRecipes.length;
         const cantPaginas = Math.ceil(totalItems / itemsPorPagina) - 1;
         const pageNumbers = [];
-              const currentRecipes = filteredRecipes.slice(offset, limit);
-        
+        const currentRecipes = filteredRecipes.slice(offset, limit);
+
         for (let i = 0; i <= cantPaginas; i++) {
             pageNumbers.push(i);
         }
         return (
-            <>         
+            <>
                 <MenuPrincipal />
                 <div className={styles.containerPrincipal}>
                     <div>
                         <Filtros />
-                    </div> 
-                  
+                    </div>
+
                     <div className={styles.containerCards}>
-                         { currentRecipes.length > 0 ? currentRecipes.map((r) => (
+
+                        {
+                            currentRecipes.length > 0 ? currentRecipes.map((r) => (
                                 <div key={r.id} className={styles.card}>
                                     <Link to={`/recipes/${r.id}`}>
                                         <h2 className={styles.foodTitle}>{r.name}</h2>
                                         <img src={r.img} alt="photo_racipe" />
                                         <p className={styles.foodText}>Diets: {r.diets}</p>
-                                    </Link> 
-                                </div> 
-                             ) 
-                             ) 
-                             :                            
-                             <div className={stylesSpinner.containerSpinner}>
-                                 <div className={stylesSpinner.pacMan}>
-                                 </div>
-                                 <div className={stylesSpinner.loading}>Loading...
-                                 </div> 
-                              </div> 
-    
-                         }  
+                                    </Link>
+                                </div>
+                            )
+                            )
+                                :
+                                <div className={stylesSpinner.containerSpinner}>
+                                    <div className={stylesSpinner.pacMan}>
+                                    </div>
+                                    <div className={stylesSpinner.loading}>Loading...
+                                    </div>
+                                </div>
+
+                        }
+
                     </div>
-                   
-                
+
+
                     <div className={styles.containerPaginacion}>
-                     {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
+                        {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
                         {pageNumbers.length > 0 &&
                             pageNumbers.map((p, i) => {
                                 return (
@@ -103,7 +106,7 @@ export default function Home() {
                             })}
                         {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
                     </div>
-                    </div>
+                </div>
             </>
         )
     }
