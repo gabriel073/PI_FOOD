@@ -7,8 +7,8 @@ import RecipeDetails  from './components/recipeDetails/RecipeDetails.js';
 import NewRecipe from './components/newRecipe/NewRecipe';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://food-production-d6e7.up.railway.app' 
-                                
+// axios.defaults.baseURL = 'https://food-production-d6e7.up.railway.app';
+axios.defaults.baseURL =  'http://127.0.0.1:3001';                  
 
 function App() {
   return (
