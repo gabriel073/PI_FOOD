@@ -7,6 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* scroll-behavior: auto;
+  scroll-behavior: initial;
+  scroll-behavior: unset; */
+  /* overflow: hidden; */
+ 
 }
 
 code {

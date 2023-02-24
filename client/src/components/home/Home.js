@@ -43,7 +43,6 @@ export default function Home() {
                     <div className={styles.containerErrorNoFound}>
                         <img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'} />
                     </div>
-
                 </div>
             </>
         )
@@ -64,8 +63,21 @@ export default function Home() {
                         <Filtros />
                     </div>
 
-                    <div className={styles.containerCards}>
 
+                    <div className={styles.containerPaginacion}>
+                        {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
+                        {pageNumbers.length > 0 &&
+                            pageNumbers.map((p, i) => {
+                                return (
+                                    <div className={styles.btnPaginacion}>
+                                        <ion-button fill="outline" onClick={() => handleAddPagina(p)} disabled={i === pagina} key={i}>{p + 1}</ion-button>
+                                    </div>
+                                );
+                            })}
+                        {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
+                    </div>
+
+                    <div className={styles.containerCards}>
                         {
                             currentRecipes.length > 0 ? currentRecipes.map((r) => (
                                 <div key={r.id} className={styles.card}>
@@ -84,27 +96,7 @@ export default function Home() {
                                     <div className={stylesSpinner.loading}>Loading...
                                     </div>
                                 </div>
-
                         }
-
-                    </div>
-
-
-                    <div className={styles.containerPaginacion}>
-                        {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
-                        {pageNumbers.length > 0 &&
-                            pageNumbers.map((p, i) => {
-                                return (
-                                    <button
-                                        disabled={i === pagina}
-                                        className={styles.btnPaginacion}
-                                        key={i}
-                                        onClick={() => handleAddPagina(p)}>
-                                        {p + 1}
-                                    </button>
-                                );
-                            })}
-                        {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
                     </div>
                 </div>
             </>

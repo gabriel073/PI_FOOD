@@ -2,22 +2,42 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 6rem;
+  height: 8rem;
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: fixed;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+   box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
     0 0 0 2px rgba(125, 215, 8, 0.542), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 .eggs{
   width: 8rem;
+  height: 7rem;
   border-radius: 60% 15%;
 
 }
+
+.f{
+  font-family: 'Shantell Sans', cursive;
+  font-size: 5rem;
+  transform: rotate(-15deg);
+  position: relative;
+  top: 10px;
+  left: 5px;
+}
+
+.d{
+  font-family: 'Shantell Sans', cursive;
+  font-size: 5rem;
+  transform: rotate(-15deg);
+  position: relative;
+  bottom: 7px;
+  right: 5px;
+}
+
+
 .containerEggs{
   display: flex;
   flex-direction: row;
-}
+} 
 .linkHome {
   align-self: center;
   justify-content: flex-end;

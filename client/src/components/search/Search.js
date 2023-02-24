@@ -15,14 +15,21 @@ export default function Search() {
         dispatch(searchRecipe(e.target.value));
     }
     return (
-        <div className={styles.containerSearch}>
-            <input type="text"
-                value={search}
-                className={styles.search}
-                placeholder="Search..."
-                onChange={searcher} />
+        <>
+            <div className={styles.containerSearch}>
 
-        </div>
+
+        
+                <ion-icon name="search-outline"></ion-icon>
+                <input
+                    type="text"
+                    value={search}
+                    className={styles.search}
+                    placeholder="Search"
+                    onChange={searcher} />
+
+            </div>
+        </>
     );
 }
 
