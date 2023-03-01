@@ -39,7 +39,6 @@ export default function Home() {
         return (
             <>
                 <div>
-                    <MenuPrincipal />
                     <div className={styles.containerErrorNoFound}>
                         <img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'} />
                     </div>
@@ -63,9 +62,16 @@ export default function Home() {
                         <Filtros />
                     </div>
 
-
                     <div className={styles.containerPaginacion}>
-                        {pagina > 0 && <button className={styles.btnAtras} onClick={handleMinus}> Atras </button>}
+                        {pagina > 0 &&
+                            <button onClick={() => handleMinus(pagina - 1)}>
+                                <div className={styles.btnAtras}>
+                                    <ion-icon name="play-back-outline"></ion-icon>
+
+                                </div>
+                            </button>
+                        }
+
                         {pageNumbers.length > 0 &&
                             pageNumbers.map((p, i) => {
                                 return (
@@ -74,18 +80,35 @@ export default function Home() {
                                     </div>
                                 );
                             })}
-                        {pagina < cantPaginas && <button className={styles.btnAdelante} onClick={() => handleAddPagina(pagina + 1)}> Adelante </button>}
+
+                        {pagina < cantPaginas &&
+                            <button onClick={() => handleAddPagina(pagina + 1)}>
+                                <div className={styles.btnAdelante}>
+                                    <ion-icon name="play-forward-outline"></ion-icon>
+                                </div>
+                            </button>
+                        }
                     </div>
 
                     <div className={styles.containerCards}>
                         {
                             currentRecipes.length > 0 ? currentRecipes.map((r) => (
-                                <div key={r.id} className={styles.card}>
-                                    <Link to={`/recipes/${r.id}`}>
-                                        <h2 className={styles.foodTitle}>{r.name}</h2>
-                                        <img src={r.img} alt="photo_racipe" />
-                                        <p className={styles.foodText}>Diets: {r.diets}</p>
-                                    </Link>
+                                <div className={styles.card}>
+                                    <ion-card key={r.id} >
+                                        <Link to={`/recipes/${r.id}`}>                                              
+                                            <div className={styles.imgCard}>
+                                                <img alt="photo_racipe"  src={r.img}/>
+                                            </div>
+                                                
+                                            <ion-card-header>
+                                                <ion-card-title>{r.name}</ion-card-title>
+                                                <div className={styles.diets}>
+                                                    <ion-card-subtitle  >Diets: {r.diets}</ion-card-subtitle>
+                                                </div>
+                                            </ion-card-header>
+
+                                        </Link>
+                                    </ion-card>
                                 </div>
                             )
                             )

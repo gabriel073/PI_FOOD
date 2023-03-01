@@ -79,36 +79,36 @@
     {
       "id":  664147,
       "name":" Tuscan White Bean Soup with Olive Oil and Rosemary",
-      "img":" https: //spoonacular.com/recipeImages/664147-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/664147-312x231.jpg",
       "healthScore":  94,
       "diets":" gluten free, dairy free, lacto ovo vegetarian, vegan"
     },
     {
       "id":  640941,
       "name":" Crunchy Brussels Sprouts Se Dish",
-      "img":" https: //spoonacular.com/recipeImages/640941-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/640941-312x231.jpg",
       "healthScore":  100,
       "diets":" gluten free, dairy free, paleolithic, lacto ovo vegetarian, primal"
     },
     {
       "id":  715495,
       "name":" Turkey Tomato Cheese Pizza",
-      "img":" https: //spoonacular.com/recipeImages/715495-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/715495-312x231.jpg",
       "healthScore":  39,
       "diets": "gluten free, dairy free, paleolithic"
     },
     {
       "id":  794349,
       "name":" Broccoli and Chickpea Rice Salad",
-      "img":" https: //spoonacular.com/recipeImages/794349-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/794349-312x231.jpg",
       "healthScore":  83,
       "diets":" gluten free, dairy free, lacto ovo vegetarian, vegan"
     },
     {
       "id":  716381,
       "name":" Nigerian Snail Stew",
-      "img":" https: //spoonacular.com/recipeImages/716381-312x231.jpg",
-      "healthScore":  66,
+      "img": "https://spoonacular.com/recipeImages/716381-312x231.jpg",
+      "healthScore": 66,
       "diets":" gluten free, dairy free, whole 30"
     },
     {
@@ -128,14 +128,14 @@
     {
       "id":  715769,
       "name":" Broccolini Quinoa Pilaf",
-      "img":" https: //spoonacular.com/recipeImages/715769-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/715769-312x231.jpg",
       "healthScore":  74,
       "diets":" gluten free, dairy free, lacto ovo vegetarian, vegan"
     },
     {
       "id":  642129,
       "name":" Easy To Make Spring Rolls",
-      "img":" https: //spoonacular.com/recipeImages/642129-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/642129-312x231.jpg",
       "healthScore":  100,
       "diets": "gluten free, dairy free, pescatarian"
     },
@@ -149,8 +149,8 @@
     {
       "id":  636589,
       "name": "Butternut Squash Frittata",
-      "img": "https: //spoonacular.com/recipeImages/636589-312x231.jpg",
-      "healthScore":  100,
+      "img": "https://spoonacular.com/recipeImages/636589-312x231.jpg",
+      "healthScore": 100,
       "diets": "gluten free"
     },
     {
@@ -170,7 +170,7 @@
     {
       "id":  663559,
       "name": "Tomato and lentil soup",
-      "img": "https: //spoonacular.com/recipeImages/663559-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/663559-312x231.jpg",
       "healthScore": 100,
       "diets": "gluten free, dairy free, lacto ovo vegetarian, vegan"
     },
@@ -240,7 +240,7 @@
     {
       "id": 729366,
       "name": "Plantain Salad",
-      "img": "https: //spoonacular.com/recipeImages/729366-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/729366-312x231.jpg",
       "healthScore": 61,
       "diets": "gluten free, pescatarian"
     },
@@ -625,7 +625,7 @@
     {
       "id":  664680,
       "name":"Vegetarian Mushroom Shepherds Pie",
-      "img": "https: //spoonacular.com/recipeImages/664680-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/664680-312x231.jpg",
       "healthScore": 66,
       "diets": "gluten free, dairy free"
     },
@@ -646,7 +646,7 @@
     {
       "id": 632812,
       "name": "Asian Chicken and Broccoli With Chili Garlic Sauce",
-      "img": "https: //spoonacular.com/recipeImages/632812-312x231.jpg",
+      "img": "https://spoonacular.com/recipeImages/632812-312x231.jpg",
       "healthScore": 100,
       "diets": "gluten free, dairy free"
     },
