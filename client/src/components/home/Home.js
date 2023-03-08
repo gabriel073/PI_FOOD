@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { getRecipes } from "../../actions";
 import styles from "./Home.module.css";
 import stylesSpinner from "../../components/spinner.module.css";
 import MenuPrincipal from "../menuPrincipal/MenuPrincipal";
-import recipeNotFound from '../../imgs/recipeNotFound2.jpg';
 import Filtros from '../filtros/Filtros';
+import  {Redirect, useLocation}  from 'react-router-dom';
 
 
 export default function Home() {
     const dispatch = useDispatch();
     let { filteredRecipes, recipes } = useSelector(state => state);
 
-
+    const location = useLocation();
     const [pagina, setPagina] = useState(0);
 
     useEffect(() => {
@@ -37,13 +37,7 @@ export default function Home() {
     const limit = offset + itemsPorPagina;
     if (typeof filteredRecipes === "string") {
         return (
-            <>
-                <div>
-                    <div className={styles.containerErrorNoFound}>
-                        <img className={styles.errorNoFound} src={recipeNotFound} alt={'RecipeNotFound'} />
-                    </div>
-                </div>
-            </>
+            <Redirect to="/notFound" state={{ from: location }} />        
         )
     } else {
         const totalItems = filteredRecipes.length;
@@ -67,7 +61,6 @@ export default function Home() {
                             <button onClick={() => handleMinus(pagina - 1)}>
                                 <div className={styles.btnAtras}>
                                     <ion-icon name="play-back-outline"></ion-icon>
-
                                 </div>
                             </button>
                         }
@@ -95,15 +88,15 @@ export default function Home() {
                             currentRecipes.length > 0 ? currentRecipes.map((r) => (
                                 <div className={styles.card}>
                                     <ion-card key={r.id} >
-                                        <Link to={`/recipes/${r.id}`}>                                              
+                                        <Link to={`/recipes/${r.id}`}>
                                             <div className={styles.imgCard}>
-                                                <img alt="photo_racipe"  src={r.img}/>
+                                                <img alt="photo_racipe" className={styles.imgCard} src={r.img} />
                                             </div>
-                                                
+
                                             <ion-card-header>
                                                 <ion-card-title>{r.name}</ion-card-title>
                                                 <div className={styles.diets}>
-                                                    <ion-card-subtitle  >Diets: {r.diets}</ion-card-subtitle>
+                                                    <ion-card-subtitle >Diets: {r.diets}</ion-card-subtitle>
                                                 </div>
                                             </ion-card-header>
 
@@ -113,12 +106,10 @@ export default function Home() {
                             )
                             )
                                 :
-                                <div className={stylesSpinner.containerSpinner}>
-                                    <div className={stylesSpinner.pacMan}>
-                                    </div>
-                                    <div className={stylesSpinner.loading}>Loading...
-                                    </div>
-                                </div>
+                              
+                                    
+                              <div className={styles.containerLoading}><h2 className={styles.loading}>Loading...<div className={styles.reloj}>⏳</div></h2></div>                                   
+                             
                         }
                     </div>
                 </div>

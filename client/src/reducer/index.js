@@ -111,8 +111,8 @@ function rootReducer(state = initialState, action) {
     if (action.type === POST_RECIPE) {
         return {
             ...state,
-            filteredRecipes: [action.payload, ...state.filteredRecipes],
-            recipes: [action.payload, ...state.recipes],
+            filteredRecipes: [...state.filteredRecipes, action.payload],
+            recipes: [...state.recipes, action.payload],
         }
     }
 

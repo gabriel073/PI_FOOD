@@ -17,8 +17,6 @@ export default function Search() {
     return (
         <>
             <div className={styles.containerSearch}>
-
-
         
                 <ion-icon name="search-outline"></ion-icon>
                 <input

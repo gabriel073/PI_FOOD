@@ -1,16 +1,28 @@
 const axios = require('axios');
 require('dotenv').config();
 const  fs = require('fs');
+const {Recipe}= require('../src/db.js')
 
 
 const APIKEY = process.env.API_KEY;
 const URL = `https://api.spoonacular.com/recipes/`;
 
 exports.getRecipes = async (req, res) => {
+
+    // let recipesDb = [];
+
     try {
+
         let rawData = fs.readFileSync("bbdd.json");
         let allRecipes = JSON.parse(rawData);
-        console.log(allRecipes)
+        // console.log(allRecipes)
+       const recipesDb = await Recipe.findAll();
+    //    console.log(recipesDb);
+
+        allRecipes = allRecipes.concat(recipesDb);
+
+        // console.log(recipesDb);
+
         // const { data } = await axios(`${URL}complexSearch?apiKey=${APIKEY}&addRecipeInformation=true&number=100`);
     // const allsRecipes = await allRecipes.map((recipe) => {
     //         return {

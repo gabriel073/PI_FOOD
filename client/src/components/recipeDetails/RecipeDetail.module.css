@@ -5,6 +5,8 @@
   width: 100%;
   text-align: center;
   background-color: #b3afb16e;
+  /* height: 50%; */
+
 }
 
 .containerCard{
@@ -13,6 +15,8 @@
   justify-content: center;
   margin: auto;
   align-items: center;
+  margin-top: 40px;
+  /* border: 4px solid black; */
 }
 
 .backHome {
@@ -29,9 +33,8 @@
   justify-content: center;
   text-align: center;
   font-size: 4rem;
-  margin-top: 85px;
-  margin-bottom: -60px;
-
+  margin-top: 50px;
+  margin-bottom: -120px;
   font-family: "Mochiy Pop One", "sans-serif ";
  
 }
@@ -40,20 +43,16 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(7, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  padding: 10px;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: visible;
   background: rgba(255, 255, 255, 0.104);
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
   transition: all 400ms ease-out;
   cursor: default;
   text-align:left;
-  height: 50rem;
-  margin-top: 25px;  
-  /* border: solid 2px black; */
-}
+  height: 100%;
+   
+ }
 
 .foodTitle {
   grid-area: 1 / 1 / 2 / 3;
@@ -72,7 +71,7 @@
   grid-area: 2 / 1 / 8 / 2;
   padding: 15px;
   margin-left: 50px;
-  margin-top: 40px;
+align-items: center;
 }
 
 .dietsText {

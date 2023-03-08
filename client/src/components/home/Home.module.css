@@ -1,19 +1,56 @@
 .containerErrorNoFound {
   display: flex;
   justify-content: center;
-  overflow-y: hidden;
 }
 
 .errorNoFound {
   width: 100%;
-  margin-top: -100px;
-  overflow-y: hidden;
+  height: 56rem;
+}
+.containerLoading {
+  display: flex;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  height: 100%;
+    width: 100%;
+  background-color: #b3afb16e;
+  background-size: auto;
+  /* border: 4px solid black; */
+}
+.loading {
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  height: 100%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.reloj {
+  transform: rotate(180deg);
+}
+.containerBackHome {
+  display: flex;
+  width: 20%;
+  height: 50px;
+  justify-content: start;
+  margin-bottom: 40px;
+}
+
+.backHome {
+  justify-content: center;
+  font-size: 30px;
+  color: #577037;
+  border-radius: 3rem;
+}
+.backHome:hover {
+  color: #94f11aa8;
 }
 
 .containerPrincipal {
   background-size: cover;
   height: 100%;
   background-color: #b3afb16e;
+  overflow: hidden;
 }
 
 /* ******** Cards **************** */
@@ -34,14 +71,11 @@
   width: 100%;
   height: 100%;
   align-items: center;
-  justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 4%;
   padding: 2%;
-  position: relative;
-  overflow: hidden;
 }
 
 .foodTitle {
@@ -66,13 +100,15 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.104);
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
-
+}
+.imgCard {
+  width: 19rem;
 }
 
-.diets > ion-card-subtitle{
+.diets > ion-card-subtitle {
   margin-top: 10px;
+  font-size: 1rem;
 }
-
 
 /* ******** Paginacion ********** */
 

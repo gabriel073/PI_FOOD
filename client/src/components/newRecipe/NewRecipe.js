@@ -41,7 +41,7 @@ export default function NewRecipe() {
         });
     };
 
-    const patternText = new RegExp('^[A-Z]+$', 'i');
+    
     const patternURL = new RegExp(/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi);
 
     const handleOnSubmit = (e) => {
@@ -53,7 +53,8 @@ export default function NewRecipe() {
         setStepsError(false);
         setDietsError(false);
 
-        if (!recipe.name || !patternText.test(recipe.name)) {
+       
+        if (!recipe.name) {
             return setNameError("enter a title correct for your recipe");
         }
         if (!recipe.summary) {
@@ -98,7 +99,6 @@ export default function NewRecipe() {
 
     return (
         <>
-         
             <div className={styles.containerPrincipal} >
                 <div className={styles.containerForm}>
                     <div className={styles.containerBackHome}>
@@ -114,7 +114,7 @@ export default function NewRecipe() {
                         </h1>
                     </div>
                     <div className={styles.containerImgForm}>
-                       <img className={styles.imgForm}  alt="photo_form" src={imgForm}/>
+                        <img className={styles.imgForm} alt="photo_form" src={imgForm} />
                     </div>
 
                     <form className={styles.form} action="POST" >
@@ -157,8 +157,8 @@ export default function NewRecipe() {
                             className={styles.input}
                             value={recipe.healthScore}
                             onChange={handleInputsChange} />
-
                         *required field
+
                         <div className={styles.danger}>
                             {healthScoreError && <p>{healthScoreError}</p>}
                         </div>
@@ -205,33 +205,6 @@ export default function NewRecipe() {
                                     </option>
                                 ))}
                         </select>
-                        {/* <div> */}
-                        {/* <ion-list>
-                                <ion-item>
-                                    <ion-select
-                                    
-                                        placeholder="Select Diets Types"
-                                        multiple="true"
-                                        name="diets"
-                                        onChange={handleMultiSelectChange}>
-                                            {/* {allDiets &&
-                                                allDiets.map((diet) => ( */}
-                        {/* <ion-select-option value="'Gluten Free'">'Gluten Free'</ion-select-option>
-                                                    <ion-select-option value="Dairy Free"> Dairy Free</ion-select-option>
-                                                    <ion-select-option value="Ketogenic"> Ketogenic</ion-select-option>
-                                                    <ion-select-option value="Vegetarian"> Vegetarian</ion-select-option>
-                                                    <ion-select-option value="Lacto Ovo Vegetarian"> Lacto Ovo Vegetarian</ion-select-option>
-                                                    <ion-select-option value="Vegan"> Vegan</ion-select-option>
-                                                    <ion-select-option value="Pescatarian">Pescatarian</ion-select-option>
-                                                    <ion-select-option value="Paleo"> Paleo</ion-select-option>
-                                                    <ion-select-option value="Primal"> Primal</ion-select-option>
-                                                    <ion-select-option value="FODMAPn">FODMAP Vegetarian</ion-select-option>
-                                                    <ion-select-option value="Whole 30"> Whole 30</ion-select-option> */}
-                        {/* ))} */}
-                        {/* </ion-select>
-                                </ion-item>
-                            </ion-list> */}
-                        {/* </div> */}
 
                         <div className={styles.danger}>
                             {dietsError && <p>{dietsError}</p>}
@@ -240,9 +213,7 @@ export default function NewRecipe() {
                         <div className={styles.buttons}>
                             <button type="submit" className={styles.button}
                                 onClick={handleOnSubmit}>Enviar</button>
-
                             <button className={styles.button} onClick={handleBackSubmit}>Cancelar</button>
-
                         </div>
                     </form>
                 </div>
