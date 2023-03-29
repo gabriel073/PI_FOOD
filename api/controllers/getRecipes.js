@@ -13,8 +13,8 @@ exports.getRecipes = async (req, res) => {
 
     try {
 
-        let rawData = fs.readFileSync("bbdd.json");
-        let allRecipes = JSON.parse(rawData);
+        let data = fs.readFileSync("bbdd.json");
+        let allRecipes = JSON.parse(data);
         // console.log(allRecipes)
        const recipesDb = await Recipe.findAll();
     //    console.log(recipesDb);

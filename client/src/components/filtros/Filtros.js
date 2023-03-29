@@ -22,10 +22,10 @@ export default function Filtros() {
             <div className={styles.containerSelectOrd}>
                 <label className={styles.labels}>Order By</label>
                 <div className={styles.rowOrder}>
-                <ion-icon name="chevron-down-outline" ></ion-icon>
+                <ion-icon name="chevron-down-outline"></ion-icon>
                 </div>
                 <select name="ordenamiento" className={styles.ordenar} onChange={handleSelectChange}>
-                    <option value="original">All   </option>
+                    <option value="original">All</option>
                     <option value="alfaAsc">A-Z</option>
                     <option value="alfaDesc">Z-A</option>
                     <option value="scoreMin">min score</option>
