@@ -8,9 +8,9 @@ const { Recipe, Diet } = require("../src/db.js");
 
 exports.getRecipes = async (req, res) => {
   try {
-    console.log("entro")
+    // console.log("entro")
     let data = fs.readFileSync("bbdd.json");
-    console.log(data)
+    // console.log(data)
     let allRecipes = JSON.parse(data);
     let recipesDb = await Recipe.findAll({
       include: {
@@ -21,7 +21,7 @@ exports.getRecipes = async (req, res) => {
         },
       },
     });
-    console.log(recipesDb)
+    // console.log(recipesDb)
     const recipesFormated = await recipesDb.map((recipe) => {
       return {
         id: recipe.id,
