@@ -1,8 +1,7 @@
 .containerSpinner {
   display: flex;
-  justify-content: center;
-  position: relative;
-  top: -15rem;
+  justify-items: center;
+  /* border: solid 2px black; */
 }
 .loading {
   font-size: 30px;
@@ -13,7 +12,7 @@
 
 .pacMan {
   border-radius: 50%;
-  margin-top: 10em;
+  margin-top: 15em;
   border-radius: 100em 100em 0 0;
   background: #f00;
   transform-origin: bottom;

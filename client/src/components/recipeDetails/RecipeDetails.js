@@ -35,9 +35,9 @@ export default function RecipeDetails(props) {
                             <div key={details.id} className={styles.card}>
 
                                 <h2 className={styles.foodTitle}>{details.name}</h2>
-
                                 <img src={details.img} className={styles.img} alt="photo_racipe" />
 
+                            <div className={styles.containerItemsText}>
                                 <p className={styles.containerPharr}>
                                   <span className={styles.dietsText}>
                                         Diets:<br/>
@@ -72,18 +72,18 @@ export default function RecipeDetails(props) {
                                         </p>
                                         : null
                                 }
+                                </div>
                             </div>
                             :
-                         
+                            
                             <div className={stylesSpinner.containerSpinner}>
                                 <div className={stylesSpinner.pacMan}>
                                 </div>
                                 <div className={stylesSpinner.loading}>Loading...
                                 </div>
                             </div>
-
                     }
-                </div>
+                    </div>
             </div>
         </>
     )

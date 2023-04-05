@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link} from "react-router-dom";
 import { getRecipes } from "../../actions";
 import styles from "./Home.module.css";
-import stylesSpinner from "../../components/spinner.module.css";
 import MenuPrincipal from "../menuPrincipal/MenuPrincipal";
 import Filtros from '../filtros/Filtros';
 import  {Redirect, useLocation}  from 'react-router-dom';
@@ -13,8 +12,11 @@ export default function Home() {
     const dispatch = useDispatch();
     let { filteredRecipes, recipes } = useSelector(state => state);
 
+
     const location = useLocation();
     const [pagina, setPagina] = useState(0);
+
+    // console.log(recipes);
 
     useEffect(() => {
         if (recipes.length === 0) {

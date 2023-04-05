@@ -44,7 +44,6 @@ function rootReducer(state = initialState, action) {
     if (action.type === SEARCH_RECIPE) {
         let filtered = [];
 
-
         action.payload.length > 0
             ? filtered = state.recipes.filter((dato) => dato.name.toLowerCase().includes(action.payload.toLowerCase()))
             : filtered = state.recipes
@@ -52,36 +51,35 @@ function rootReducer(state = initialState, action) {
             ...state,
             filteredRecipes: filtered.length === 0 ? "No Hay Recetas" : filtered,
             searching: action.payload
-
         }
     }
 
     if (action.type === ORDER_RECIPE) {
-        if (action.payload === "alfaAsc") {
+        if (action.payload === "alfaAsc") {            
             return {
                 ...state,
-                filteredRecipes: [...state.recipes].sort((a, b) => a.name.localeCompare(b.name))
+                filteredRecipes: [...state.filteredRecipes].sort((a, b) => a.name.trim().localeCompare(b.name.trim()))
             }
         }
 
         if (action.payload === "alfaDesc") {
             return {
                 ...state,
-                filteredRecipes: [...state.recipes].sort((a, b) => b.name.localeCompare(a.name))
+                filteredRecipes: [...state.filteredRecipes].sort((a, b) => b.name.trim().localeCompare(a.name.trim()))
             }
         }
 
         if (action.payload === "scoreMin") {
             return {
                 ...state,
-                filteredRecipes: [...state.recipes].sort((a, b) => a.healthScore - b.healthScore)
+                filteredRecipes: [...state.filteredRecipes].sort((a, b) => a.healthScore - b.healthScore)
             }
         }
 
         if (action.payload === "scoreHigh") {
             return {
                 ...state,
-                filteredRecipes: [...state.recipes].sort((a, b) => b.healthScore - a.healthScore)
+                filteredRecipes: [...state.filteredRecipes].sort((a, b) => b.healthScore - a.healthScore)
             }
         }
 
