@@ -5,7 +5,7 @@ const {Recipe, Diet}= require('../src/db.js')
 
 
 const APIKEY = process.env.API_KEY;
-const URL = `https://api.spoonacular.com/recipes/`;
+const URL = `https://api.spoonacular.com/recipe`;
 
 exports.getRecipes = async (req, res) => {
 
