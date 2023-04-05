@@ -10,9 +10,9 @@ exports.getRecipeById = async (req, res) => {
     if (id.length < 10) {
       let data = fs.readFileSync("bbdd.json");
       let allRecipes = JSON.parse(data);
-      const index = (r) => r.id === id;
-      recipe = allRecipes[allRecipes.findIndex(index)]
-
+    //   const index = (r) => r.id === id;
+    //   recipe = allRecipes[allRecipes.findIndex(index)]
+    recipe = allRecipes.findIndex(r => r.id === id)
       return res.status(200).send(recipe);
     } else {
       recipe = await Recipe.findOne({
