@@ -10,7 +10,20 @@ exports.getRecipeById = async (req, res) => {
     if (id.length < 10) {
       let data = fs.readFileSync("bbdd.json");
       let allRecipes = JSON.parse(data);
-      recipe = allRecipes.filter(r => r.id == id)
+      recipe = allRecipes.map((r) => {
+        if (r.id == id)
+          return {
+            id: r.id,
+            name: r.name,
+            summary: r.summary,
+            img: r.img,
+            healthScore: r.healthScore,
+            steps: r.steps,
+            diets: r.Diets.map((d) => d.name)
+              .filter((p) => p != null)
+              .join(", "),
+          };
+      });
       return res.status(200).send(recipe);
     } else {
       recipe = await Recipe.findOne({
