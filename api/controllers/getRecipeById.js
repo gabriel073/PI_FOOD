@@ -1,18 +1,17 @@
-const axios = require("axios");
-require("dotenv").config();
+const fs = require("fs");
 
 const { Diet, Recipe } = require("../src/db.js");
 
 exports.getRecipeById = async (req, res) => {
   const { id } = req.params;
-//   let recipe = {};
+  let recipe = {};
   try {
     if (id.length < 10) {
       let data = fs.readFileSync("bbdd.json");
-      let allRecipes = JSON.parse(data);
-    //   const index = (r) => r.id === id;
-    //   recipe = allRecipes[allRecipes.findIndex(index)]
-   let recipe = allRecipes.findIndex(r => r.id === id)
+      let allRecipes = await JSON.parse(data);
+      let index = allRecipes.findIndex((r) => r.id == id);
+      recipe = allRecipes[index];
+
       return res.status(200).send(recipe);
     } else {
       recipe = await Recipe.findOne({
@@ -35,7 +34,7 @@ exports.getRecipeById = async (req, res) => {
           .filter((p) => p != null)
           .join(", "),
       };
-
+      console.log(formatedDetail);
       return res.status(200).json(formatedDetail);
     }
   } catch (error) {

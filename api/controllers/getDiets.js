@@ -1,7 +1,6 @@
-const axios = require('axios');
 require('dotenv').config();
-const APIKEY = process.env.API_KEY;
-const URL = `https://api.spoonacular.com/recipes/`;
+
+
 const { Diet } = require("../src/db.js");
 
 exports.getDiets = async (req, res) => {

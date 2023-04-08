@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "test": "mocha -w ./tests/**/*.spec.js",
+    "type": "module"
   },
+  
   "author": "Henry",
   "license": "ISC",
   "engines": {
@@ -32,4 +34,9 @@
     "supertest": "^6.0.1",
     "supertest-session": "^4.1.0"
   }
+  
+       
+
+   
+
 }

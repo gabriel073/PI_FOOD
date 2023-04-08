@@ -7,10 +7,8 @@ const { Recipe, Diet } = require("../src/db.js");
 // const URL = `https://api.spoonacular.com/recipe`;
 
 exports.getRecipes = async (req, res) => {
-  try {
-    // console.log("entro")
+  try {   
     let data = fs.readFileSync("bbdd.json");
-    // console.log(data)
     let allRecipes = JSON.parse(data);
     let recipesDb = await Recipe.findAll({
       include: {
@@ -21,7 +19,7 @@ exports.getRecipes = async (req, res) => {
         },
       },
     });
-    // console.log(recipesDb)
+
     const recipesFormated = await recipesDb.map((recipe) => {
       return {
         id: recipe.id,
