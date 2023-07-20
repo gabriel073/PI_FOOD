@@ -5,10 +5,10 @@ import NavBar from "./components/navBar/NavBar.js";
 import Home from "./components/home/Home.js";
 import RecipeDetails from './components/recipeDetails/RecipeDetails.js';
 import NewRecipe from './components/newRecipe/NewRecipe';
-import axios from 'axios';
+// import axios from 'axios';
 import NotFound from './components/search/NotFound';
 
-axios.defaults.baseURL = 'https://food-app.up.railway.app';
+// axios.defaults.baseURL = 'https://food-app.up.railway.app';
 // axios.defaults.baseURL =  'http://127.0.0.1:3001';                  
 
 function App() {
