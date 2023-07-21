@@ -5,7 +5,7 @@ const path = require("path");
 // const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 
 let sequelize =
-  process.env.NODE_ENV === "production"
+  process.env.MYSQL_URL === "production"
     ? new Sequelize({
       // database: DB_NAME,
       database: MYSQLDATABASE,
@@ -32,7 +32,7 @@ let sequelize =
       },
       ssl: true,
     })
-    : new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, {
+    : new Sequelize(`postgres://${MYSQLUSER}:${MYSQLPASSWORD}@${MYSQLHOST}/food`, {
       logging: false,
       native: false,
     });
