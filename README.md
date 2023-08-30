@@ -187,3 +187,11 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 - [ ] Al menos tener un componente del frontend con sus tests respectivos
 - [ ] Al menos tener una ruta del backend con sus tests respectivos
 - [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+
+## 
+Resultado de la App - Recipes:
+![Screenshot de la web de psicoEspacio.](https://i.ibb.co/xXnkf48/recipes-App.png)
+
+##
+Ir al Video Demo:
+[Video Demo](https://www.youtube.com/watch?v=8bP8FS9GXc0&feature=youtu.be)
