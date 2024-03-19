@@ -1,8 +1,8 @@
 # Individual Project - Food
+## 
 
-<p align="right">
-  <img height="200" src="./cooking.png" />
-</p>
+![Screenshot de la web de App Recipes.](https://i.ibb.co/xXnkf48/recipes-App.png)
+
 
 ## Objetivos del Proyecto
 
@@ -65,10 +65,6 @@ La idea general es crear una aplicación en la cual se puedan ver distintas rece
 - [ ] Redux
 - [ ] Express
 - [ ] Sequelize - Postgres
-
-## 
-Resultado de la App - Recipes:
-![Screenshot de la web de App Recipes.](https://i.ibb.co/xXnkf48/recipes-App.png)
 
 ##
 Ir al Video Demo:
