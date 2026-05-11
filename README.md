@@ -39,8 +39,8 @@ El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas esta
 En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
 
 ```env
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
+DB_USER= usuariodepostgres
+DB_PASSWORD= passwordDePostgres
 DB_HOST=localhost
 ```
 
