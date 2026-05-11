@@ -17,11 +17,7 @@ Adicionalmente será necesario que creen desde psql una base de datos llamada `f
 
  Agregar la clave en el archivo `.env`
 
-{
-  
-   
-    API_KEY3: '87e508280cf7416b88994f8533893e9c'
-}
+
 
 `?apiKey=${YOUR_API_KEY}`
 
