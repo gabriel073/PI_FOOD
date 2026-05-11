@@ -1,71 +1,147 @@
-# Individual Project - Food
-## 
+# 🍽️ Food Recipe App
 
-![Screenshot de la web de App Recipes.](https://i.ibb.co/xXnkf48/recipes-App.png)
+A full-featured SPA to browse thousands of recipes, filter by diet or ingredient, and create & save your own recipes — powered by the [Spoonacular API](https://spoonacular.com/food-api).
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://client-bice-tau.vercel.app)
+[![Video Demo](https://img.shields.io/badge/Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=8bP8FS9GXc0)
 
-## Objetivos del Proyecto
+---
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+## ✨ Features
 
+- 🔍 Search recipes from thousands of options via Spoonacular API
+- 🥗 Filter by diet type and ingredients
+- 📋 Sort results by different criteria
+- ✏️ Create and save your own custom recipes to the database
+- 💾 Persistent storage with PostgreSQL
 
+---
 
-Actualmente las versiónes necesarias son:
+## 🛠️ Tech stack
 
-- __Node__: 12.18.3 o mayor
-- __NPM__: 6.14.16 o mayor
+| Layer | Technologies |
+|-------|-------------|
+| Frontend | React 17 · Redux · React Router · CSS Modules |
+| Backend | Node.js · Express · Sequelize |
+| Database | PostgreSQL |
+| External API | Spoonacular |
 
+---
 
+## 🚀 Run locally
 
-__ACLARACIÓN:__ Las dependencias actuales se encuentran en las versiones que venimos trabajando durante el proyecto.
+### Prerequisites
 
-Versiones:
+Make sure you have installed:
 
-- __react__: 17.0.1
-- __react-dom__: 17.0.1
-- __react-router-dom__: 5.2.0
-- __redux__: 4.0.5
-- __react-redux__: 7.2.3
+- **Node.js** `v12.18.3` or higher
+- **NPM** `v6.14.16` or higher
+- **PostgreSQL** running locally
 
+### 1. Clone the repository
 
-## BoilerPlate
-
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
-
-En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
-
-```env
-DB_USER= usuariodepostgres
-DB_PASSWORD= passwordDePostgres
-DB_HOST=localhost
+```bash
+git clone https://github.com/gabriel073/PI_FOOD.git
+cd PI_FOOD
 ```
 
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
+### 2. Set up the database
 
-Adicionalmente será necesario que creen desde psql una base de datos llamada `food`
+Open your PostgreSQL client (psql or pgAdmin) and create the database:
 
-El contenido de `client` fue creado usando: Create React App.
+```sql
+CREATE DATABASE food;
+```
 
-## Enunciado
+### 3. Configure environment variables
 
-La idea general es crear una aplicación en la cual se puedan ver distintas recetas de comida junto con información relevante de las mismas utilizando la api externa [spoonacular](https://spoonacular.com/food-api) y a partir de ella poder, entre otras cosas:
+Inside the `api` folder, create a file named `.env`:
 
-- Buscar recetas
-- Filtrarlos / Ordenarlos
-- Crear nuevas recetas propias
+```bash
+cd api
+cp .env.example .env   # if the example exists, otherwise create it manually
+```
 
+Fill in your own credentials:
 
-#### Tecnologías Utilizadas
+```env
+DB_USER=your_postgres_username
+DB_PASSWORD=your_postgres_password
+DB_HOST=localhost
+API_KEY=your_spoonacular_api_key
+```
 
-- [ ] React
-- [ ] Redux
-- [ ] Express
-- [ ] Sequelize - Postgres
+> 💡 Get your free Spoonacular API key at [spoonacular.com/food-api](https://spoonacular.com/food-api)
 
-##
-Ir al Video Demo:
-[Video Demo](https://www.youtube.com/watch?v=8bP8FS9GXc0&feature=youtu.be)
+### 4. Install dependencies and start the backend
+
+```bash
+# Inside the /api folder
+npm install
+npm start
+```
+
+The server will start on `http://localhost:3001`
+
+### 5. Install dependencies and start the frontend
+
+Open a **new terminal** and run:
+
+```bash
+# Inside the /client folder
+cd ../client
+npm install
+npm start
+```
+
+The app will open automatically on `http://localhost:3000`
+
+---
+
+## 📁 Project structure
+
+```
+PI_FOOD/
+├── api/              # Express backend
+│   ├── src/
+│   │   ├── models/   # Sequelize models
+│   │   ├── routes/   # API routes
+│   │   └── app.js
+│   └── .env          # ⚠️ Not committed — create manually
+│
+└── client/           # React frontend
+    ├── public/
+    └── src/
+        ├── components/
+        ├── redux/
+        └── App.js
+```
+
+---
+
+## 📦 Key dependencies
+
+| Package | Version |
+|---------|---------|
+| react | 17.0.1 |
+| react-dom | 17.0.1 |
+| react-router-dom | 5.2.0 |
+| redux | 4.0.5 |
+| react-redux | 7.2.3 |
+
+---
+
+## 🎯 Project goals
+
+- Build a fullstack app with React, Redux, Node.js and Sequelize
+- Practice Git workflow and collaborative development
+- Apply testing best practices
+- Connect to a real external API
+
+---
+
+## 👤 Author
+
+**Gabriel Marzioli**
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-marzioli/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/gabriel073)
